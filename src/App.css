@@ -1,0 +1,23 @@
+/* install fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitter&family=Montserrat&display=swap');
+
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* global styles */
+body {
+  font-family: 'Bitter', 'Montserrat';
+}
+
+.logo {
+  width: 60px;
+}
+
+.logo img{
+  width: 30px;
+  height: 30px;
+}
