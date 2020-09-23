@@ -6,7 +6,7 @@ function App() {
   return (
     <header className="navbar">
       <div className="logo">
-        <a href="/"><img src="./img/me-avatar.png" alt="logo"/></a>
+        <a href="/"><img src="./img/me-avatar.png" alt="logo" /></a>
       </div>
       <div className="menu">
         <nav>
