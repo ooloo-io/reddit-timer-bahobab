@@ -1,26 +1,26 @@
 import React from 'react';
+import {
+  BrowserRouter, Route, Redirect, Switch,
+} from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import './App.css';
+import theme from './theme';
+import GlobalStyle from './GlobalStyle';
+
+// import './App.css';
 
 function App() {
   return (
-    <header className="navbar">
-      <div className="logo">
-        <a href="/"><img src="./img/me-avatar.png" alt="logo" /></a>
-      </div>
-      <div className="menu">
-        <nav>
-          <ul className="menu">
-            <a href="/about">
-              <li>About</li>
-            </a>
-            <a href="/search">
-              <li>Search</li>
-            </a>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Switch>
+          <Route exact path="/">Home</Route>
+          <Route path="/search">Search</Route>
+          <Redirect to="/" />
+        </Switch>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
