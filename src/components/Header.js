@@ -16,7 +16,7 @@ function Header() {
         </div>
         <div className="nav-wrapper">
           <ul className="nav">
-            <li><Link exact to="/search">Search</Link></li>
+            <li><Link exact to="/search/javascript">Search</Link></li>
             <li><Link exact to="#how-it-works">How it works</Link></li>
             <li><Link exact to="#about">About</Link></li>
           </ul>
