@@ -55,6 +55,14 @@ const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.color.text};
     background: ${(props) => props.theme.background.default};
   }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff
+;  }
 `;
 
 export default GlobalStyle;

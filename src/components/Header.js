@@ -9,7 +9,10 @@ function Header() {
     <StyledHeader>
       <div className="navbar">
         <div className="logo">
-          <Link to="/"><img src={logo} alt="logo" style={{ width: '40px' }} /></Link>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
+          <p>reddit timer</p>
         </div>
         <div className="nav-wrapper">
           <ul className="nav">
@@ -37,6 +40,15 @@ const StyledHeader = styled.header`
 
   .logo {
     padding-left: 10px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .logo img {
+    width: 40px;
   }
 
 .nav {

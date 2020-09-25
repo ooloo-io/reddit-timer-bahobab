@@ -18,16 +18,16 @@ function App() {
       <BrowserRouter>
         <GlobalStyle />
         <Header />
-        <Switch>
-          <Route exact path="/" />
-          <Route path="/search" component={Search} />
-          <Redirect to="/" />
-        </Switch>
+        <div className="main">
+          <Switch>
+            <Route exact path="/" />
+            <Route path="/search" component={Search} />
+            <Redirect to="/" />
+          </Switch>
+          <div id="how-it-works"><h3>How it works</h3></div>
+          <div id="about"><h3>About</h3></div>
+        </div>
       </BrowserRouter>
-      <div className="main">
-        <div id="how-it-works"><h3>How it works</h3></div>
-        <div id="about"><h3>About</h3></div>
-      </div>
     </ThemeProvider>
   );
 }
