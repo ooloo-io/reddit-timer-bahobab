@@ -14,11 +14,11 @@ function App() {
       <Header />
       <Switch>
         <Route exact path="/">Home Page</Route>
-        <Route path="/search">Search page</Route>
+        <Route path="/search">Search Page</Route>
         <Redirect to="/" />
       </Switch>
-      <div id="how-it-works"><h3>How it works</h3></div>
-      <div id="about"><h3>About</h3></div>
+      {/* <div id="how-it-works"><h3>How it works</h3></div>
+      <div id="about"><h3>About</h3></div> */}
     </ThemeProvider>
   );
 }
