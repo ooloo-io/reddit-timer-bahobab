@@ -3,7 +3,7 @@ import { MemoryRouter, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import App from '../common/app';
+import App from '../app';
 
 const setup = (initialPath = '/') => {
   let history;
