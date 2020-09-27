@@ -7,6 +7,10 @@ const theme = {
   },
   color: {
     text: '#93918f',
+    dargk: '#000',
+    midDark: '#636363',
+    midLight: '#d5d5d5',
+    light: '#fff',
   },
   font: {
     family: {
