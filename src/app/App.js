@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme } from '../style';
 import Header from '../header';
+import Footer from '../footer';
 
 // import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
       </Switch>
       {/* <div id="how-it-works"><h3>How it works</h3></div>
       <div id="about"><h3>About</h3></div> */}
+      <Footer />
     </ThemeProvider>
   );
 }
