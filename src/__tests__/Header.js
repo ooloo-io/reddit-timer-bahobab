@@ -2,6 +2,7 @@ import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 
 import App from '../app';
 
@@ -38,8 +39,8 @@ describe('Header', () => {
     const searchLink = screen.getByRole('link', { name: /search/i });
     userEvent.click(searchLink);
 
-    expect(screen.getByText(/search/i)).toBeInTheDocument();
-    expect(history.location.pathName).toEqual('/search/javascript/');
+    expect(screen.getByText(/search page/i)).toBeInTheDocument();
+    expect(history.location.pathname).toEqual('/search/javascript');
   });
 
   test.each`
