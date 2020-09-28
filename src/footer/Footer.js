@@ -6,7 +6,7 @@ import { Container, FooterLink, Sign } from './Footer.style';
 function Footer() {
   return (
     <Container>
-      <FooterLink to="https://ooloo.io/employers">ooloo.io</FooterLink>
+      <a href="https://ooloo.io/employers">ooloo.io</a>
       <FooterLink to="/">
         <Sign />
       </FooterLink>

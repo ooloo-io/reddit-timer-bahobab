@@ -15,6 +15,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/search">Search Page</Route>
+        <Route path="/terms">Terms Page</Route>
         <Route path="/">Home Page</Route>
         <Redirect to="/" />
       </Switch>
