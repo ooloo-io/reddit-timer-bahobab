@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as UnstyledLogo } from '../assets/logo.svg';
 
 export const Container = styled.header`
-  width: 100%100%;
-  height: 100px;
+  width: 100%;
+  height: ${(props) => props.theme.size.headerHeight};
   margin: 0 auto;
   padding: 0 80px;
   display: flex;
@@ -15,7 +15,8 @@ export const Container = styled.header`
 
 export const Logo = styled(UnstyledLogo)`
   display: block;
-  width: 40px;
+  width: 150px;
+  height: 36px;
 `;
 
 export const HeaderLink = styled(Link)`

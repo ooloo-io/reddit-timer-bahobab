@@ -5,6 +5,10 @@ const theme = {
     },
     default: 'linear-gradient(to right,rgba(255, 0, 0, 0), rgba(255, 0, 0, 1))',
   },
+  size: {
+    headerHeight: '100px',
+    footerHeight: '100px',
+  },
   color: {
     text: '#93918f',
     dargk: '#000',
@@ -17,9 +21,10 @@ const theme = {
       default: '"Montserrat", sans-serif',
       headline: '"Bitter", serif',
     },
-  },
-  size: {
-    default: '16px',
+    size: {
+      default: '16px',
+      small: '14px',
+    },
   },
   lineHeight: {
     default: 1.69,

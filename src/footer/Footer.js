@@ -1,18 +1,20 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { Container, FooterLink, Sign } from './Footer.style';
+import {
+  Container, FooterLinkRight, FooterLinkLeft, Sign,
+} from './Footer.style';
 
 function Footer() {
   return (
     <Container>
-      <a href="https://ooloo.io/employers">ooloo.io</a>
-      <FooterLink to="/">
+      <FooterLinkLeft as="a" href="https://ooloo.io/employers">ooloo.io</FooterLinkLeft>
+      <Link to="/">
         <Sign />
-      </FooterLink>
-      <FooterLink to="/terms">
+      </Link>
+      <FooterLinkRight to="/terms">
         Terms & Privacy
-      </FooterLink>
+      </FooterLinkRight>
     </Container>
   );
 }
