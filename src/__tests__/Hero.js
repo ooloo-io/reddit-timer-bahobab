@@ -36,8 +36,8 @@ describe('hero section', () => {
 
   it("shows a CTA button and the default subreddit '/r/javascript'", () => {
     setup();
-    const ctaButton = screen.getByRole('cta');
-    const subReddit = screen.getByRole('subreddit');
+    const ctaButton = screen.getByTitle('cta');
+    const subReddit = screen.getByTitle('subreddit');
 
     expect(subReddit).toBeVisible();
     expect(ctaButton).toBeVisible();
@@ -45,7 +45,7 @@ describe('hero section', () => {
 
   it('shows an image of the heatmap', () => {
     setup();
-    const heatmap = screen.getByRole('heatmap');
+    const heatmap = screen.getByTitle('heatmap');
 
     expect(heatmap).toBeVisible();
   });

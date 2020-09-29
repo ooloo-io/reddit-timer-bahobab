@@ -8,10 +8,10 @@ function Hero() {
     <HeroSection>
       <h1 title="hero-title">No reactions to your reddit posts?</h1>
       <h5 title="hero-subtitle">Great timing, great results! Find the best time to post on your subreddit.</h5>
-      <Link to="/search/javascript"><button role="cta">SHOW ME THE BEST TIME</button></Link>
-      <p><span role="subreddit">/r/javascript</span></p>
+      <Link to="/search/javascript"><button type="button" title="cta">SHOW ME THE BEST TIME</button></Link>
+      <p><span title="subreddit">/r/javascript</span></p>
       <Link to="/search/javascript">
-        <Heatmap role="heatmap" />
+        <Heatmap title="heatmap" />
       </Link>
     </HeroSection>
   );
