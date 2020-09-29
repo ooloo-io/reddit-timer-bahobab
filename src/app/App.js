@@ -4,9 +4,10 @@ import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, theme } from '../style';
 import { ContentContainer } from './App.style';
-import Header from '../header';
-import Hero from '../hero';
-import Footer from '../footer';
+import Header from '../common/header';
+import Footer from '../common/footer';
+// import Hero from '../hero';
+import HomePage from '../page-home';
 
 // import './App.css';
 
@@ -21,7 +22,7 @@ function App() {
           <Route path="/search">Search Page</Route>
           <Route path="/terms">Terms Page</Route>
           <Route path="/">
-            <Hero />
+            <HomePage />
             <p>Home Page</p>
           </Route>
           <Redirect to="/" />

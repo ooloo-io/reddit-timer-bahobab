@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as UnstyledSign } from '../assets/sign.svg';
+import { ReactComponent as UnstyledSign } from '../../assets/sign.svg';
 
 export const Container = styled.footer`
   width:100%;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as UnstyledLogo } from '../assets/logo.svg';
+import { ReactComponent as UnstyledLogo } from '../../assets/logo.svg';
 
 export const Container = styled.header`
   width: 100%;
