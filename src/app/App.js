@@ -16,10 +16,14 @@ function App() {
       <GlobalStyle />
       <Header />
       <ContentContainer>
+
         <Switch>
           <Route path="/search">Search Page</Route>
           <Route path="/terms">Terms Page</Route>
-          <Route path="/" component={Hero} />
+          <Route path="/">
+            <Hero />
+            <p>Home Page</p>
+          </Route>
           <Redirect to="/" />
         </Switch>
       </ContentContainer>
