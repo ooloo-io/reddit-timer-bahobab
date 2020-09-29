@@ -26,22 +26,22 @@ const setup = (initialPath = '/') => {
 
 describe('footer', () => {
   it('navigates to the home page when the logo is clicked', () => {
-    setup();
+    setup('/search/javascript');
     const logoLink = screen.getByRole('link', { name: /sign.svg/i });
     userEvent.click(logoLink);
 
     expect(screen.getByText(/home page/i)).toBeInTheDocument();
   });
 
-  it('', () => {
-    setup();
+  it('navigates to terms page when terms link is clicked', () => {
+    setup('/search/javascript');
     const termsLink = screen.getByRole('link', { name: /terms/i });
     userEvent.click(termsLink);
 
     expect(screen.getByText(/Terms Page/i)).toBeInTheDocument();
   });
 
-  it('', async () => {
+  it('contains link pointing to ooloo.io/employers page', async () => {
     setup();
     const employerLink = screen.getByRole('link', { name: /ooloo.io/i });
     // await userEvent.click(employerLink);
