@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from '../style';
 import { ContentContainer } from './App.style';
 import Header from '../header';
+import Hero from '../hero';
 import Footer from '../footer';
 
 // import './App.css';
@@ -18,7 +19,7 @@ function App() {
         <Switch>
           <Route path="/search">Search Page</Route>
           <Route path="/terms">Terms Page</Route>
-          <Route path="/">Home Page</Route>
+          <Route path="/" component={Hero} />
           <Redirect to="/" />
         </Switch>
       </ContentContainer>
