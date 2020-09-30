@@ -1,7 +1,6 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
 import App from '../app';
