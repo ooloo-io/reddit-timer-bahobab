@@ -12,13 +12,14 @@ function InfoSection() {
       <Section id="about">
         <h2>About</h2>
         <p>
-          This app was created during a course on
+          This app was created during a course on &nbsp;
           <InfoLink as="a" href="https://ooloo.io">ooloo.io</InfoLink>
           {' '}
           with the goal to implement pixel-perfect real-world application
-          with professional workflows and tools like Kanban, Clickup, Zeplin, GitHub, pull requests and code reviews.
+          with professional workflows and tools like Kanban, Clickup,
           {' '}
-          <InfoLink as="a" href="https://ooloo.io/employers"> Click here for more information</InfoLink>
+          Zeplin, GitHub, pull requests and code reviews.
+          <InfoLink as="a" href="https://ooloo.io/employers"> &nbsp;Click here for more information</InfoLink>
         </p>
       </Section>
     </Container>
