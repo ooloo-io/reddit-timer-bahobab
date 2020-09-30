@@ -11,8 +11,8 @@ function InfoSection() {
       </Section>
       <Section id="about">
         <h2>About</h2>
-        <InfoLink as="a" href="https://ooloo.io">ooloo.io</InfoLink>
         <InfoLink as="a" href="https://ooloo.io/employers">ooloo.io</InfoLink>
+        <InfoLink as="a" href="https://ooloo.io">ooloo.io</InfoLink>
       </Section>
     </Container>
   );
