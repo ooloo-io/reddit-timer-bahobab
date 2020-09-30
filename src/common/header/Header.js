@@ -12,8 +12,8 @@ function Header() {
       </Link>
       <nav>
         <HeaderLink to={`/search/${defaultSubReddit}`}>Search</HeaderLink>
-        <HeaderLink to="/#how-it-works">How it works</HeaderLink>
-        <HeaderLink to="/#about">About</HeaderLink>
+        <HeaderLink smooth to="/#how-it-works">How it works</HeaderLink>
+        <HeaderLink smooth to="/#about">About</HeaderLink>
       </nav>
     </Container>
   );

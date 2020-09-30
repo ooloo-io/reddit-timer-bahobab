@@ -25,3 +25,9 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.color.midDark}
 `;
+
+/* export const HashLink = styled.a`
+  margin-left: 26px;
+  text-decoration: none;
+  color: ${(props) => props.theme.color.midDark}
+`; */
