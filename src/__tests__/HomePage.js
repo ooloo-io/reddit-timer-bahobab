@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -43,5 +43,24 @@ describe('homepage', () => {
 
     expect(screen.getByText(/search page/i)).toBeInTheDocument();
     expect(history.location.pathname).toEqual('/search/javascript');
+  });
+});
+
+describe('info section', () => {
+  it("contains 'About' section and 'How it works section", () => {
+    setup();
+    expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /How it works/i })).toBeInTheDocument();
+  });
+
+  it('contains links pointing to ooloo home and employers page', () => {
+    setup();
+    const aboutSection = screen.getAllByRole('article')[1];
+
+    const oolooHomeLink = within(aboutSection).getByRole('link', { name: /ooloo\.io/i });
+    expect(oolooHomeLink).toHaveAttribute('href', 'https://ooloo.io');
+
+    const employersLink = within(aboutSection).getByRole('link', { name: /click here for more information/i });
+    expect(employersLink.getAttribute('href')).toEqual('https://ooloo.io/employers');
   });
 });

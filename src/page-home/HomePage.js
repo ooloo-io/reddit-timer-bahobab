@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HeroSection from './HeroSection';
-import InfoSection from '../info-section';
+import InfoSection from './InfoSection';
 
 function HomePage() {
   return (
