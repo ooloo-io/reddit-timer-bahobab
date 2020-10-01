@@ -5,7 +5,7 @@ import { Container, HeaderLink, Logo } from './Header.style';
 import { defaultSubReddit } from '../../config';
 
 function Header() {
-  function handleClick(evt) {
+  function handleClick() {
     window.dispatchEvent(new Event('popstate'));
   }
 
