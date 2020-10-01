@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 import { ReactComponent as UnstyledLogo } from '../../assets/logo.svg';
 
@@ -24,3 +25,9 @@ export const HeaderLink = styled(Link)`
   text-decoration: none;
   color: ${(props) => props.theme.color.midDark}
 `;
+
+/* export const HashLink = styled.a`
+  margin-left: 26px;
+  text-decoration: none;
+  color: ${(props) => props.theme.color.midDark}
+`; */

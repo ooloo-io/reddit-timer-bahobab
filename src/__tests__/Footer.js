@@ -43,9 +43,9 @@ describe('footer', () => {
 
   it('contains link pointing to ooloo.io/employers page', async () => {
     setup();
-    const employerLink = screen.getByRole('link', { name: /ooloo.io/i });
+    const employerLink = screen.getAllByRole('link', { name: /ooloo.io/i });
     // await userEvent.click(employerLink);
 
-    expect(employerLink).toHaveAttribute('href', 'https://ooloo.io/employers');
+    expect(employerLink[1]).toHaveAttribute('href', 'https://ooloo.io/employers');
   });
 });

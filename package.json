@@ -7,16 +7,18 @@
     "@testing-library/react": "^10.4.5",
     "@testing-library/user-event": "^12.0.11",
     "eslint-plugin-styled-components-a11y": "^0.0.16",
+    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.1.0",
     "react-scripts": "3.4.1",
     "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "eslint --fix .",
@@ -49,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.6",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "jest-environment-jsdom-sixteen": "^1.0.3"
   }
 }

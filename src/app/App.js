@@ -6,10 +6,7 @@ import { GlobalStyle, theme } from '../style';
 import { ContentContainer } from './App.style';
 import Header from '../common/header';
 import Footer from '../common/footer';
-// import Hero from '../hero';
 import HomePage from '../page-home';
-
-// import './App.css';
 
 function App() {
   return (
