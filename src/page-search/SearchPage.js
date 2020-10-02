@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { Section, Headline, Status } from './SearchPage.style';
-import Search from './Search';
+import { Container, Headline } from './SearchPage.style';
+import SubredditForm from './SubredditForm';
 
 function SearchPage() {
   return (
-    <Section>
+    <Container>
       <Headline>Find the best time for a subreddit</Headline>
-      <Search />
-      <Status />
-    </Section>
+      <SubredditForm />
+    </Container>
   );
 }
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
 import App from '../app';
+import { defaultSubReddit } from '../config';
 
 const setup = (initialPath = '/') => {
   let history;
@@ -25,44 +26,31 @@ const setup = (initialPath = '/') => {
 };
 
 describe('subreddit form', () => {
-  it('shows the form title', () => {
-    setup('/search/javascript');
+  it('updates the URL when submitting the form', () => {
+    const { history } = setup('/search/python');
+    const searchInput = screen.getByLabelText('r /');
 
-    expect(screen.getByRole('heading', { name: /Find the best time for a subreddit/i })).toBeInTheDocument();
-  });
+    expect(searchInput.value).toBe('python');
 
-  it('shows a text input prefix with r/', () => {
-    setup('/search/javascript');
-    const inputBox = screen.getByLabelText('r/');
+    userEvent.clear(searchInput);
+    userEvent.type(searchInput, 'Gatsbyjs');
 
-    expect(inputBox).toBeInTheDocument();
-    expect(inputBox.getAttribute('type')).toEqual('text');
-    // screen.debug(inputBox);
-  });
+    expect(searchInput.value).toBe('Gatsbyjs');
 
-  it('shows a submit button', () => {
-    setup('/search/javascript');
     const submitButton = screen.getByRole('button', { name: /search/i });
-
-    expect(submitButton).toBeInTheDocument();
-  });
-
-  it('updates the URL on submit and initializes input value from URL', () => {
-    const { history } = setup('/search/javascript');
-    const inputBox = screen.getByLabelText('r/');
-    const submitButton = screen.getByRole('button', { name: /search/i });
-    const initialValue = history.location.pathname.split('/')[2];
-    // console.log(initialValue);
-
-    inputBox.value = '';
-    inputBox.value = initialValue;
-    expect(inputBox).toHaveValue(initialValue);
-
-    inputBox.value = '';
-    userEvent.type(inputBox, 'reactjs');
-
     userEvent.click(submitButton);
-    history.push(`/search/${inputBox.value}`);
-    expect(history.location.pathname).toEqual('/search/reactjs');
+
+    expect(history.location.pathname).toEqual('/search/Gatsbyjs');
+  });
+
+  it('input value changes to default subredit when seach link in header is clicked', () => {
+    setup('/search/reactjs');
+    const searchInput = screen.getByRole('textbox');
+    const header = screen.getByRole('banner');
+    const searchLink = within(header).getByRole('link', { name: /search/i });
+
+    userEvent.click(searchLink);
+
+    expect(searchInput.value).toBe(defaultSubReddit);
   });
 });

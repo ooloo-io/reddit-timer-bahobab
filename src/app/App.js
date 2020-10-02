@@ -17,7 +17,7 @@ function App() {
       <ContentContainer>
 
         <Switch>
-          <Route path="/search">
+          <Route path="/search/:subreddit">
             <SearchPage />
             <p>Search Page</p>
           </Route>

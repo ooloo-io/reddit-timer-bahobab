@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-export const Section = styled.section`
-  width: 100%;
+import UnstyledContainer from '../common/container';
+
+export const Container = styled(UnstyledContainer)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Headline = styled.h1`
-  margin-top: 32px; 
-`;
-
-export const Status = styled.div`
-  width: 200px;
-  height: 200px
+  margin-top: 18px 0 0; 
 `;
