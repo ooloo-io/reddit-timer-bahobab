@@ -7,6 +7,7 @@ import { ContentContainer } from './App.style';
 import Header from '../common/header';
 import Footer from '../common/footer';
 import HomePage from '../page-home';
+import SearchPage from '../page-search';
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
       <ContentContainer>
 
         <Switch>
-          <Route path="/search">Search Page</Route>
+          <Route path="/search/:subreddit">
+            <SearchPage />
+            <p>Search Page</p>
+          </Route>
           <Route path="/terms">Terms Page</Route>
           <Route path="/">
             <HomePage />

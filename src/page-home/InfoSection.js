@@ -21,8 +21,8 @@ function InfoSection() {
         with the goal to implement pixel-perfect real-world application
         with professional workflows and tools like Kanban, Clickup,
         {' '}
-        Zeplin, GitHub, pull requests and code reviews.
-        <a href="https://ooloo.io/employers"> &nbsp;Click here for more information</a>
+        Zeplin, GitHub, pull requests and code reviews.&nbsp;
+        <a href="https://ooloo.io/employers">Click here for more information</a>
       </Info>
     </Section>
   );

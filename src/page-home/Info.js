@@ -1,16 +1,16 @@
 import React from 'react';
 import { string, node } from 'prop-types';
 
-import { Article, Content, Headline } from './Info.style';
+import { Container, Content, Headline } from './Info.style';
 
 function Info({ id, headline, children }) {
   return (
-    <Article id={id}>
+    <Container as="article" id={id}>
       <Headline>{headline}</Headline>
       <Content>
         {children}
       </Content>
-    </Article>
+    </Container>
   );
 }
 
