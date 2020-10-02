@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { createBrowserHistory } from 'history';
 
 import {
   Form, Input, Label, Button,
 } from './Search.style';
 
-function Search(props) {
+const history = createBrowserHistory();
+
+function Search() {
   const [url, setUrl] = useState('javascript');
   const baseUrl = window.location.origin;
 
@@ -12,21 +15,14 @@ function Search(props) {
     setUrl(evt.target.value);
   }
 
-  // window.addEventListener('popstate', (evt) => {
-  //   if (!evt.explicitOriginalTarget.pathname) {
-
-  //   } else {
-  //     const defaultReddit = evt.explicitOriginalTarget.pathname.split('/')[2];
-  //     setUrl(defaultReddit);
-  //   }
-  // });
+  history.listen(() => {
+    setUrl('javascript');
+  });
 
   function handleSubmit(evt) {
     evt.preventDefault();
     const nextUrl = `${baseUrl}/search/${url}`;
     window.history.pushState({ state: 'search page' }, '', nextUrl);
-    // setUrl('');
-    // return
   }
 
   useEffect(() => {
@@ -48,7 +44,7 @@ function Search(props) {
       <Button>Search</Button>
       <pre>
         URL:
-        {JSON.stringify(props)}
+        {JSON.stringify(window.location)}
       </pre>
     </Form>
   );
