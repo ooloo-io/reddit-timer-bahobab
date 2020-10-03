@@ -7,7 +7,7 @@ import fetchMock from 'jest-fetch-mock';
 
 // import { defaultSubReddit } from '../config';
 import App from '../app';
-import mockResponse from './__mocks__/subreddit-reactjs-response2.json';
+import mockResponse from './__mocks__/subreddit-reactjs-response.json';
 
 fetchMock.enableMocks();
 
