@@ -4,13 +4,13 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 
-import { defaultSubReddit } from '../config';
+// import { defaultSubReddit } from '../config';
 import App from '../app';
 
 const setup = (initialPath = '/') => {
   let history;
-  let subredditName;
-  const redditUrl = `https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`;
+  // let subredditName;
+  // const redditUrl = `https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`;
 
   render(
     <MemoryRouter initialEntries={[initialPath]}>
@@ -40,6 +40,11 @@ describe('load the data', () => {
     userEvent.click(submitButton);
     expect(history.location.pathname).toEqual('/search/reactjs');
 
-    expect(screen.findByText(/is losding/i)).toBeInTheDocument();
+    const loadingMessage = screen.getByText(/is loading/i);
+    expect(loadingMessage).toBeInTheDocument();
+    // screen.debug()
+
+    const searchResults = await screen.findByText(/Number of posts/i);
+    screen.debug(searchResults);
   });
 });
