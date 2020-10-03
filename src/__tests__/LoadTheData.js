@@ -3,9 +3,13 @@ import { MemoryRouter, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
+import fetchMock from 'jest-fetch-mock';
 
 // import { defaultSubReddit } from '../config';
 import App from '../app';
+import mockResponse from './__mocks__/subreddit-reactjs-response2.json';
+
+fetchMock.enableMocks();
 
 const setup = (initialPath = '/') => {
   let history;
@@ -29,7 +33,9 @@ const setup = (initialPath = '/') => {
 
 describe('load the data', () => {
   it('fetch the top 500 posts of the last year for the specified subreddit on form submit', async () => {
+    fetch.once(JSON.stringify(mockResponse));
     const { history } = setup('/search/javascript');
+
     const subredditInput = screen.getByLabelText('r /');
     const submitButton = screen.getByRole('button', { name: /search/i });
 
@@ -44,7 +50,7 @@ describe('load the data', () => {
     expect(loadingMessage).toBeInTheDocument();
     // screen.debug()
 
-    const searchResults = await screen.findByText(/Number of posts/i);
-    screen.debug(searchResults);
+    expect(await screen.findByText(/Number of posts: 10/i)).toBeInTheDocument();
+    // screen.debug(searchResults);
   });
 });

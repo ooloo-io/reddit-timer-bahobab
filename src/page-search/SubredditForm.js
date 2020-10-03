@@ -18,7 +18,7 @@ function SubredditForm() {
   }
 
   async function fetchSubReddit(subredditName) {
-    const redditUrl = `https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`;
+    const redditUrl = `https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=10`;
 
     setLoading(true);
     const response = await fetch(redditUrl);
@@ -26,7 +26,7 @@ function SubredditForm() {
       const redditData = await response.json();
       setPosts(redditData.data.children);
     } else {
-      // setPosts
+    // setPosts
     }
     setLoading(false);
   }
@@ -65,7 +65,6 @@ function SubredditForm() {
       {
       loading ? <div>is loading</div> : (
         <div>
-          {' '}
           Number of posts:
           {posts.length}
         </div>
