@@ -17,17 +17,32 @@ function SubredditForm() {
     setSubreddit(event.target.value);
   }
 
-  async function fetchSubReddit(subredditName) {
-    const redditUrl = `https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=10`;
+  async function fetch100SubReddit(url) {
+    const response = await fetch(url);
+    const redditData = await response.json();
+    return redditData.data.children;
+  }
 
+  async function fetchSubReddit(subredditName) {
     setLoading(true);
-    const response = await fetch(redditUrl);
-    if (response.ok && response.status === 200) {
-      const redditData = await response.json();
-      setPosts(redditData.data.children);
-    } else {
-    // setPosts
-    }
+    let allSubreddit = [];
+
+    allSubreddit = [...allSubreddit, ...(await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`))];
+    allSubreddit = [...allSubreddit, ...(await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=t3_drl1d6`))];
+    allSubreddit = [...allSubreddit, ...(await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=t3_ccg6no`))];
+    allSubreddit = [...allSubreddit, ...(await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=t3_caufp8`))];
+    allSubreddit = [...allSubreddit, ...(await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=t3_e8o8oz`))];
+
+    // console.log('>>allSubredit', allSubreddit);
+    // from Johannes
+    // https://github.com/ooloo-io/reddit-timer-bahobab/blob/master/cypress/support/commands.js#L60
+    // 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&aft';
+    // 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_ccg6no';
+    // 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_caufp8';
+    // 'https://www.reddit.com/r/javascript/top.json?t=year&limit=100&after=t3_e8o8oz';
+
+    setPosts(allSubreddit);
+
     setLoading(false);
   }
 
