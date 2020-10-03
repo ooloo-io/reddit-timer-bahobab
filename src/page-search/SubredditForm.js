@@ -61,6 +61,7 @@ function SubredditForm() {
   useEffect(() => {
     setSubreddit(initialSubreddit);
     fetchSubReddit(initialSubreddit);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialSubreddit]);
 
   return (
