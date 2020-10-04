@@ -18,9 +18,15 @@ function SubredditForm() {
   }
 
   async function fetch100SubReddit(url) {
-    const response = await fetch(url);
-    const redditData = await response.json();
-    return redditData.data;
+    let response;
+    try {
+      response = await fetch(url);
+      const redditData = await response.json();
+      return redditData.data;
+    } catch (error) {
+      console.log('<<<<response', response);
+      console.log('>>>ERROR in fetch100:', error);
+    }
   }
 
   async function fetchSubReddit(subredditName) {
@@ -28,20 +34,24 @@ function SubredditForm() {
     let allSubreddit = [];
     let subRedditData;
 
-    subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`);
-    allSubreddit = [...allSubreddit, ...subRedditData.children];
+    try {
+      subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100`);
+      allSubreddit = [...allSubreddit, ...subRedditData.children];
 
-    subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
-    allSubreddit = [...allSubreddit, ...subRedditData.children];
+      subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
+      allSubreddit = [...allSubreddit, ...subRedditData.children];
 
-    subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
-    allSubreddit = [...allSubreddit, ...subRedditData.children];
+      subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
+      allSubreddit = [...allSubreddit, ...subRedditData.children];
 
-    subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
-    allSubreddit = [...allSubreddit, ...subRedditData.children];
+      subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
+      allSubreddit = [...allSubreddit, ...subRedditData.children];
 
-    subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
-    allSubreddit = [...allSubreddit, ...subRedditData.children];
+      subRedditData = await fetch100SubReddit(`https://www.reddit.com/r/${subredditName}/top.json?t=year&limit=100&after=${subRedditData.after}`);
+      allSubreddit = [...allSubreddit, ...subRedditData.children];
+    } catch (error) {
+      console.log('ERROR in fetchSubreddit', error);
+    }
 
     setPosts(allSubreddit);
 
@@ -84,7 +94,8 @@ function SubredditForm() {
       loading ? <div>is loading</div> : (
         <div>
           Number of posts:
-          {posts.length}
+          {' '}
+          <span>{posts.length}</span>
         </div>
       )
     }

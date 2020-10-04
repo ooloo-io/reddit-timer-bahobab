@@ -7,7 +7,11 @@ import fetchMock from 'jest-fetch-mock';
 
 // import { defaultSubReddit } from '../config';
 import App from '../app';
-import mockResponse from './__mocks__/subreddit-reactjs-response.json';
+import mockResponse1 from './__mocks__/subreddit-reactjs-response1.json';
+import mockResponse2 from './__mocks__/subreddit-reactjs-response2.json';
+import mockResponse3 from './__mocks__/subreddit-reactjs-response3.json';
+import mockResponse4 from './__mocks__/subreddit-reactjs-response4.json';
+import mockResponse5 from './__mocks__/subreddit-reactjs-response5.json';
 
 fetchMock.enableMocks();
 
@@ -33,7 +37,14 @@ const setup = (initialPath = '/') => {
 
 describe('load the data', () => {
   it('fetch the top 500 posts of the last year for the specified subreddit on form submit', async () => {
-    fetch.once(JSON.stringify(mockResponse));
+    fetch.once(JSON.stringify(mockResponse1));
+    // .once(JSON.stringify(mockResponse2))
+    // .once(JSON.stringify(mockResponse2))
+    // .once(JSON.stringify(mockResponse3))
+    // .once(JSON.stringify(mockResponse4))
+    // .once(JSON.stringify(mockResponse5));
+
+    // console.log('$%$%$%: ', response;
     const { history } = setup('/search/javascript');
 
     const subredditInput = screen.getByLabelText('r /');
@@ -50,7 +61,8 @@ describe('load the data', () => {
     expect(loadingMessage).toBeInTheDocument();
     // screen.debug()
 
-    expect(await screen.findByText(/Number of posts: 10/i)).toBeInTheDocument();
+    expect(await screen.findByText(/100/i)).toBeInTheDocument();
+    expect(fetch).toHaveBeenCalledWith('https://www.reddit.com/r/javascript/top.json?t=year&limit=100');
     // screen.debug(searchResults);
   });
 });
