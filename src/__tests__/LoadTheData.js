@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
 import fetchMock from 'jest-fetch-mock';
 
@@ -37,32 +37,35 @@ const setup = (initialPath = '/') => {
 
 describe('load the data', () => {
   it('fetch the top 500 posts of the last year for the specified subreddit on form submit', async () => {
-    fetch.once(JSON.stringify(mockResponse1));
-    // .once(JSON.stringify(mockResponse2))
-    // .once(JSON.stringify(mockResponse2))
-    // .once(JSON.stringify(mockResponse3))
-    // .once(JSON.stringify(mockResponse4))
-    // .once(JSON.stringify(mockResponse5));
+    fetch
+      .once(JSON.stringify(mockResponse1))
+      .once(JSON.stringify(mockResponse2))
+      .once(JSON.stringify(mockResponse3))
+      .once(JSON.stringify(mockResponse4))
+      .once(JSON.stringify(mockResponse5));
 
-    // console.log('$%$%$%: ', response;
-    const { history } = setup('/search/javascript');
+    setup('/search/reactjs');
 
-    const subredditInput = screen.getByLabelText('r /');
-    const submitButton = screen.getByRole('button', { name: /search/i });
+    // const searchLink = within(screen.getByRole('banner')).getByRole('link', { name: /search/i });
+    // userEvent.click(searchLink);
 
-    userEvent.clear(subredditInput);
-    userEvent.type(subredditInput, 'reactjs');
-    expect(subredditInput.value).toBe('reactjs');
+    // const subredditInput = screen.getByLabelText('r /');
+    // const submitButton = screen.getByRole('button', { name: /search/i });
 
-    userEvent.click(submitButton);
-    expect(history.location.pathname).toEqual('/search/reactjs');
+    // userEvent.clear(subredditInput);
+    // userEvent.type(subredditInput, 'reactjs');
+    // expect(subredditInput.value).toBe('reactjs');
 
-    const loadingMessage = screen.getByText(/is loading/i);
-    expect(loadingMessage).toBeInTheDocument();
-    // screen.debug()
+    // await userEvent.click(submitButton);
 
-    expect(await screen.findByText(/100/i)).toBeInTheDocument();
-    expect(fetch).toHaveBeenCalledWith('https://www.reddit.com/r/javascript/top.json?t=year&limit=100');
+    // expect(history.location.pathname).toEqual('/search/reactjs');
+
+    const loadingImage = screen.getByAltText(/is loading/i);
+    expect(loadingImage).toBeInTheDocument();
+
+    expect(await screen.findByText(/500/i)).toBeInTheDocument();
+    expect(fetch).toHaveBeenCalledTimes(5);
+    // expect(fetch).toHaveBeenCalledWith('https://www.reddit.com/r/javascript/top.json?t=year&limit=100');
     // screen.debug(searchResults);
   });
 });
