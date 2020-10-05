@@ -6,8 +6,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Montserrat";
     font-weight: 400;
     font-style: normal;
-    src: url("./fonts/Montserrat-Regular.woff") format("woff"),
-    url("./fonts/Montserrat-Regular.woff2") format("woff2");
+    src: local("./fonts/Montserrat-Regular.woff") format("woff"),
+    local("./fonts/Montserrat-Regular.woff2") format("woff2");
   }
 
   /* Montserrat Medium */
@@ -15,8 +15,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Montserrat";
     font-weight: 500;
     font-style: normal;
-    src: url("./fonts/Montserrat-Medium.woff") format("woff"),
-    url("./fonts/Montserrat-Medium.woff2") format("woff2");
+    src: local("./fonts/Montserrat-Medium.woff") format("woff"),
+    local("./fonts/Montserrat-Medium.woff2") format("woff2");
   }
 
   /* Montserrat Semi-Bold */
@@ -24,8 +24,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Montserrat";
     font-weight: 600;
     font-style: normal;
-    src: url("./fonts/Montserrat-SemiBold.woff") format("woff"),
-    url("./fonts/Montserrat-SemiBold.woff2") format("woff2");
+    src: local("./fonts/Montserrat-SemiBold.woff") format("woff"),
+    local("./fonts/Montserrat-SemiBold.woff2") format("woff2");
   }
 
   /* Montserrat Bold */
@@ -33,8 +33,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Montserrat";
     font-weight: 700;
     font-style: normal;
-    src: url("./fonts/Montserrat-Bold.woff") format("woff"),
-    url("./fonts/Montserrat-Bold.woff2") format("woff2");
+    src:locall("./fonts/Montserrat-Bold.woff") format("woff"),
+    local("./fonts/Montserrat-Bold.woff2") format("woff2");
   }
 
   /* =================== */
@@ -44,8 +44,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Bitter Regular";
     font-weight: 400;
     font-style: normal;
-    src: url("./fonts/Bitter-Regular.woff") format("woff"),
-    url("./fonts/Bitter-Regular.woff2") format("woff2");
+    src: local("./fonts/Bitter-Regular.woff") format("woff"),
+    local("./fonts/Bitter-Regular.woff2") format("woff2");
   }
 
   *, *::before, *::after {

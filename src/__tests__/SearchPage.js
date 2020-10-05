@@ -25,6 +25,25 @@ const setup = (initialPath = '/') => {
   return { history };
 };
 
+describe('search page', () => {
+  it('loads top post for subreddit in URL', async () => {
+    setup('/search/reactjs');
+
+    screen.getByText('loading-spinner.svg');
+
+    // this is just a placeholder assertion that tests if the result
+    // was rendered correctly
+    expect(await screen.findByText('500')).toBeInTheDocument();
+    expect(screen.queryByText('loading-spinner.svg')).not.toBeInTheDocument();
+  });
+
+  test('renders error message', async () => {
+    setup('/search/failing-request');
+
+    expect(await screen.findByText(/something went wrong/i)).toBeInTheDocument();
+  });
+});
+
 describe('subreddit form', () => {
   it('updates the URL when submitting the form', () => {
     const { history } = setup('/search/python');
