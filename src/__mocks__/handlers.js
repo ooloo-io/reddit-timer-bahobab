@@ -47,7 +47,7 @@ const handlers = [
     );
   }),
 
-  rest.get('https://www.reddit.com/r/500-posts/top.json', (req, res, ctx) => res(
+  rest.get('https://www.reddit.com/*', (req, res, ctx) => res(
     ctx.status(200),
     ctx.json(getJSONResponseForRequest(req)),
   )),

@@ -6,7 +6,6 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
   if (after) {
     url += `&after=${after}`;
   }
-
   const response = await fetch(url); // should be hihjacked by mock server
 
   const { data } = await response.json();
@@ -19,7 +18,6 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
   if (noMorePosts || limitReached) {
     return allPosts;
   }
-
   // recursive call using the after cursor of the last current fetch request
   return fetchPaginatedPosts(subreddit, allPosts, data.after);
 }

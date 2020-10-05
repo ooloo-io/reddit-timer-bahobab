@@ -34,7 +34,7 @@ describe('search page', () => {
     // this is just a placeholder assertion that tests if the result
     // was rendered correctly
     expect(await screen.findByText('500')).toBeInTheDocument();
-    expect(screen.queryByText('loading-spinner.svg')).toBeInTheDocument();
+    expect(screen.queryByText('loading-spinner.svg')).not.toBeInTheDocument();
   });
 
   test('renders error message', async () => {
