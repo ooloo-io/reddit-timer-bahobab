@@ -1,7 +1,21 @@
 import React from 'react';
 
+import {
+  WeekRow, Weekday, Cell, TimeFrame, HeatmapTable,
+} from './PostsTable.style';
+
 function PostsTable({ posts }) {
   let myHeatmap;
+
+  const mapWeekday = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday',
+  };
 
   const postsPerHourPerDay = new Array(7)
     .fill([])
@@ -31,101 +45,43 @@ function PostsTable({ posts }) {
     });
   }
 
-  function createWeekRow(weekData) {
-    return (
-      `<td>
-        ${
-      weekData.map((hours) => {
-        console.log('hours', hours);
-        return hours.length;
-      })
-      }
-      </td>`
-    );
-  }
-
-  async function generateHeatmap() {
+  function generateHeatmap() {
     buildPostsPerHourPerDayTable(posts, getDayTimeFromTimeCreated);
     // console.log('>>>>>>>>>', postsPerHourPerDay);
+    console.log('ttttttttttt', postsPerHourPerDay[0][22]);
     // try {
-    myHeatmap = await postsPerHourPerDay.map((weekDay, weekDayIndex) => {
-      switch (weekDayIndex) {
-        case 0: {
-          return (
-            <tr>
-              <td>Sunday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-
-        case 1: {
-          return (
-            <tr>
-              <td>Monday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-        case 2: {
-          return (
-            <tr>
-              <td>Tuesday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-        case 3: {
-          return (
-            <tr>
-              <td>Wednesday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-        case 4: {
-          return (
-            <tr>
-              <td>Thursday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-        case 5: {
-          return (
-            <tr>
-              <td>Friday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-        case 6: {
-          return (
-            <tr>
-              <td>Saturday</td>
-              {createWeekRow(weekDay)}
-            </tr>
-          );
-        }
-
-        default: return null;
-      }
+    return postsPerHourPerDay.map((weekDay, weekDayIndex) => {
+      console.log('-------weekday', mapWeekday[weekDayIndex]);
+      return (
+        <WeekRow key={weekDayIndex}>
+          <Weekday>{mapWeekday[weekDayIndex]}</Weekday>
+          {weekDay.map((hour, hourIndex) => {
+            console.log('hour, posts', hourIndex, hour);
+            return (
+              <Cell key={hourIndex}>{hour.length}</Cell>
+            );
+          })}
+        </WeekRow>
+      );
     });
     // } catch (error) {
     //   console.log('XXXXXXXXXXX', error);
     // }
 
-    return myHeatmap;
+    // return myHeatmap;
   }
 
-  generateHeatmap().then((results) => results.map((hour) => hour));
+  myHeatmap = generateHeatmap(); // .then((results) => results.map((hour) => hour));
 
-  // console.log('%%%%%%%', myHeatmap);
+  console.log('**********', myHeatmap);
 
   return (
     <div>
       <h2>Heatmap Table</h2>
-      <p>{posts.length}</p>
+      <HeatmapTable>
+        <TimeFrame><tr><th colSpan="24">Posts timeframe coming here</th></tr></TimeFrame>
+        <tbody>{myHeatmap}</tbody>
+      </HeatmapTable>
     </div>
   );
 }
