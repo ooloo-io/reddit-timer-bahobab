@@ -7,12 +7,19 @@ export const WeekRow = styled.tr`
 export const Cell = styled.td`
   height: 40px;
   width: 40px;
+  text-align: center;
+  :hover{
+    cursor: pointer;
+    border: 1px solid red;
+  }
 `;
+
 // merge these 2 td
 export const Weekday = styled.td`
-height: 40px;
+  height: 40px;
   width: 154px;
-  background-color: navy;
+  text-align: center;
+  background-color: #1e2537;
 `;
 
 export const TimeFrame = styled.thead`
@@ -22,4 +29,5 @@ export const TimeFrame = styled.thead`
 
 export const HeatmapTable = styled.table`
   width: 100%;
+  border-spacing: 0;
 `;
