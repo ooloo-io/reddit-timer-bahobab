@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import useFetchPosts from './useFetchPosts';
 import { ErrorContainer, LoadingContainer, LoadingSpinner } from './Heatmap.style';
+import PostsTable from './PostsTable';
 
 function Heatmap() {
   const { subreddit } = useParams(); // route param set in App
@@ -25,7 +26,10 @@ function Heatmap() {
   }
 
   return (
-    <div>{posts.length}</div>
+    <>
+      <div>{posts.length}</div>
+      <PostsTable posts={posts} />
+    </>
   );
 }
 
