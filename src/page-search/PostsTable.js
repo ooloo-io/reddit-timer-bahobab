@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-  WeekRow, Weekday, Cell, TimeFrame, HeatmapTable,
+  WeekRow, Weekday, Cell, TimeFrame, HeatmapTable, TimeSlice, TimeSliceWrapper,
 } from './PostsTable.style';
 
 const mapWeekday = {
@@ -127,11 +127,35 @@ function PostsTable({ posts }) {
   const localTimeZone = (new Date()).toTimeString().split('(')[1].replace(')', '');
   const userTimeZone = `${globalTimeZone} - ${localTimeZone}`;
 
+  const timeLine = (
+    <TimeSliceWrapper>
+      <TimeSlice>12:00am</TimeSlice>
+      <TimeSlice>2:00am</TimeSlice>
+      <TimeSlice>4:00am</TimeSlice>
+      <TimeSlice>6:00am</TimeSlice>
+      <TimeSlice>8:00am</TimeSlice>
+      <TimeSlice>10:00am</TimeSlice>
+      <TimeSlice>12:00pm</TimeSlice>
+      <TimeSlice>2:00pm</TimeSlice>
+      <TimeSlice>4:00pm</TimeSlice>
+      <TimeSlice>6:00pm</TimeSlice>
+      <TimeSlice>8:00pm</TimeSlice>
+      <TimeSlice>10:00pm</TimeSlice>
+    </TimeSliceWrapper>
+  );
+
   return (
     <div>
       <HeatmapTable>
-        <TimeFrame><tr><th colSpan="24">Posts timeframe coming here</th></tr></TimeFrame>
-        <tbody>{generateHeatmap()}</tbody>
+        <TimeFrame>
+          <tr>
+            <th />
+            <th colSpan="24">{timeLine}</th>
+          </tr>
+        </TimeFrame>
+        <tbody>
+          {generateHeatmap()}
+        </tbody>
       </HeatmapTable>
       <div style={{ textAlign: 'center' }}>{userTimeZone}</div>
     </div>

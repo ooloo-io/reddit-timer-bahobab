@@ -28,7 +28,24 @@ export const TimeFrame = styled.thead`
   height: 52px;
   width: 960px;
 `;
+export const TimeSliceWrapper = styled.div`
+  width: 960px;
+  height: 52px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  border: none;
+  background-image: linear-gradient(to bottom, #fefefe, #e9e9e9);
+`;
 
+export const TimeSlice = styled.span`
+  height: 18px;
+  width: 80px;
+  font-family: Montserrat;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+`;
 export const HeatmapTable = styled.table`
   width: 100%;
   border-spacing: 0;
