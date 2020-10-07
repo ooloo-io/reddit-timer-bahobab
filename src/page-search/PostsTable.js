@@ -1,80 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { array } from 'prop-types';
 
+import CellWrapper from './CellWrapper';
+
+import { mapWeekday, getUserTimeZone } from '../config';
 import {
-  WeekRow, Weekday, Cell, TimeFrame, HeatmapTable, TimeSlice, TimeSliceWrapper,
+  WeekRow, Weekday, TimeFrame, HeatmapTable, TimeSlice, TimeSliceWrapper,
 } from './PostsTable.style';
-
-const mapWeekday = {
-  0: 'Sunday',
-  1: 'Monday',
-  2: 'Tuesday',
-  3: 'Wednesday',
-  4: 'Thursday',
-  5: 'Friday',
-  6: 'Saturday',
-};
-
-const cellBackgroundColorMap = {
-  0: '#e0e592',
-  1: '#aed396',
-  2: '#a9d194',
-  3: '#a0ce93',
-  4: '#99cd94',
-  5: '#8cc894',
-  6: '#5eb391',
-  7: '#5db492',
-  8: '#5cb391',
-  9: '#5aad8c',
-  10: '#3984a3',
-};
-
-// globals
-
-function CellWrapper({ postsInHour }) {
-  const numPosts = postsInHour.length;
-  const cellHighlight = '1px solid red';
-  const cellDefaultStyle = {
-    border: 'unset',
-    backgroundColor: `${getCellBGColor()}`,
-  };
-
-  const [cellStyle, setCellStyle] = useState(cellDefaultStyle);
-  const [isSelected, setIsSelected] = useState(false);
-
-  function getCellBGColor() {
-    return cellBackgroundColorMap[numPosts] || cellBackgroundColorMap[10];
-  }
-
-  function handleCellClick() {
-    setCellStyle(
-      { ...cellStyle, border: '1px solid red' },
-    );
-    setIsSelected(true);
-  }
-
-  function handleOnMouseEnter(event) {
-    if (event.target.style.border !== cellHighlight) {
-      event.target.style.border = cellHighlight;
-    }
-  }
-
-  function handleOnMouseLeave(event) {
-    if (!isSelected) {
-      event.target.style.border = 'none';
-    }
-  }
-
-  return (
-    <Cell
-      style={cellStyle}
-      onClick={handleCellClick}
-      onMouseEnter={handleOnMouseEnter}
-      onMouseLeave={handleOnMouseLeave}
-    >
-      {numPosts}
-    </Cell>
-  );
-}
 
 function PostsTable({ posts }) {
   // let myHeatmap;
@@ -110,22 +42,23 @@ function PostsTable({ posts }) {
   function generateHeatmap() {
     buildPostsPerHourPerDayTable(posts);
     // try {
-    return postsPerHourPerDay.map((weekDay, weekDayIndex) => (
-      <WeekRow key={weekDayIndex}>
-        <Weekday>{mapWeekday[weekDayIndex]}</Weekday>
-        {weekDay.map((postsInHour, hourIndex) => (
-          <CellWrapper key={hourIndex} postsInHour={postsInHour} />
-        ))}
-      </WeekRow>
-    ));
+    return postsPerHourPerDay.map((weekDay, weekDayIndex) => {
+      // console.log('weekday', weekDay);
+      const weekday = mapWeekday[weekDayIndex];
+      return (
+        <WeekRow key={weekday}>
+          <Weekday className="weekday">{weekday}</Weekday>
+          {weekDay.map((postsInHour, hourIndex) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <CellWrapper key={hourIndex} postsInHour={postsInHour} />
+          ))}
+        </WeekRow>
+      );
+    });
     // } catch (error) {
     //   console.log('XXXXXXXXXXX', error);
     // }
   }
-
-  const globalTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const localTimeZone = (new Date()).toTimeString().split('(')[1].replace(')', '');
-  const userTimeZone = `${globalTimeZone} - ${localTimeZone}`;
 
   const timeLine = (
     <TimeSliceWrapper>
@@ -149,17 +82,23 @@ function PostsTable({ posts }) {
       <HeatmapTable>
         <TimeFrame>
           <tr>
+            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <th />
-            <th colSpan="24">{timeLine}</th>
+            <th className="timeline" colSpan="24">{timeLine}</th>
           </tr>
         </TimeFrame>
         <tbody>
           {generateHeatmap()}
         </tbody>
       </HeatmapTable>
-      <div style={{ textAlign: 'center' }}>{userTimeZone}</div>
+      <div className="timezone" style={{ textAlign: 'center' }}>{getUserTimeZone()}</div>
     </div>
   );
 }
+
+PostsTable.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  posts: array.isRequired,
+};
 
 export default PostsTable;
