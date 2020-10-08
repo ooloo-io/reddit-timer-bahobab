@@ -8,7 +8,7 @@ import '@testing-library/jest-dom/extend-expect';
 import 'jest-styled-components';
 
 import {
-  cellBackgroundColorMap, mapWeekday, postsTimeSlots,
+  cellBackgroundColorMap, mapWeekday, postsTimeSlots, getUserTimeZone,
 } from '../config';
 
 import App from '../app';
@@ -110,6 +110,6 @@ describe('heatmap', () => {
 
     await waitForElementToBeRemoved(spinner);
     screen.getByRole('table');
-    screen.getByText('America/Chicago - Central Daylight Time');
+    screen.getByText(getUserTimeZone());
   });
 });

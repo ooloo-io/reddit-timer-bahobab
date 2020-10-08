@@ -69,22 +69,6 @@ function PostsTable({ posts }) {
     }
     </TimeSliceWrapper>
   );
-  // const timeLine = (
-  //   <TimeSliceWrapper>
-  //     <TimeSlice>12:00am</TimeSlice>
-  //     <TimeSlice>2:00am</TimeSlice>
-  //     <TimeSlice>4:00am</TimeSlice>
-  //     <TimeSlice>6:00am</TimeSlice>
-  //     <TimeSlice>8:00am</TimeSlice>
-  //     <TimeSlice>10:00am</TimeSlice>
-  //     <TimeSlice>12:00pm</TimeSlice>
-  //     <TimeSlice>2:00pm</TimeSlice>
-  //     <TimeSlice>4:00pm</TimeSlice>
-  //     <TimeSlice>6:00pm</TimeSlice>
-  //     <TimeSlice>8:00pm</TimeSlice>
-  //     <TimeSlice>10:00pm</TimeSlice>
-  //   </TimeSliceWrapper>
-  // );
 
   return (
     <div>
