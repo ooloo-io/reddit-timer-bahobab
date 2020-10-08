@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const WeekRow = styled.tr`
   width: 100%;
-z-index: 10;
+/* z-index: 10;w */
 `;
 
 export const Cell = styled.td`

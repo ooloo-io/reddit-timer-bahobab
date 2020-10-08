@@ -3,7 +3,7 @@ import { array } from 'prop-types';
 
 import CellWrapper from './CellWrapper';
 
-import { mapWeekday, getUserTimeZone } from '../config';
+import { mapWeekday, getUserTimeZone, postsTimeSlots } from '../config';
 import {
   WeekRow, Weekday, TimeFrame, HeatmapTable, TimeSlice, TimeSliceWrapper,
 } from './PostsTable.style';
@@ -62,20 +62,29 @@ function PostsTable({ posts }) {
 
   const timeLine = (
     <TimeSliceWrapper>
-      <TimeSlice>12:00am</TimeSlice>
-      <TimeSlice>2:00am</TimeSlice>
-      <TimeSlice>4:00am</TimeSlice>
-      <TimeSlice>6:00am</TimeSlice>
-      <TimeSlice>8:00am</TimeSlice>
-      <TimeSlice>10:00am</TimeSlice>
-      <TimeSlice>12:00pm</TimeSlice>
-      <TimeSlice>2:00pm</TimeSlice>
-      <TimeSlice>4:00pm</TimeSlice>
-      <TimeSlice>6:00pm</TimeSlice>
-      <TimeSlice>8:00pm</TimeSlice>
-      <TimeSlice>10:00pm</TimeSlice>
+      {
+    postsTimeSlots.map((timeSlot) => (
+      <TimeSlice key={timeSlot}>{timeSlot}</TimeSlice>
+    ))
+    }
     </TimeSliceWrapper>
   );
+  // const timeLine = (
+  //   <TimeSliceWrapper>
+  //     <TimeSlice>12:00am</TimeSlice>
+  //     <TimeSlice>2:00am</TimeSlice>
+  //     <TimeSlice>4:00am</TimeSlice>
+  //     <TimeSlice>6:00am</TimeSlice>
+  //     <TimeSlice>8:00am</TimeSlice>
+  //     <TimeSlice>10:00am</TimeSlice>
+  //     <TimeSlice>12:00pm</TimeSlice>
+  //     <TimeSlice>2:00pm</TimeSlice>
+  //     <TimeSlice>4:00pm</TimeSlice>
+  //     <TimeSlice>6:00pm</TimeSlice>
+  //     <TimeSlice>8:00pm</TimeSlice>
+  //     <TimeSlice>10:00pm</TimeSlice>
+  //   </TimeSliceWrapper>
+  // );
 
   return (
     <div>
