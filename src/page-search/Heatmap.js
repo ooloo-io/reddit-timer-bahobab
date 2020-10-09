@@ -1,36 +1,48 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import {
+  arrayOf, func, number, shape,
+} from 'prop-types';
 
-import useFetchPosts from './useFetchPosts';
-import { ErrorContainer, LoadingContainer, LoadingSpinner } from './Heatmap.style';
-import PostsTable from './PostsTable';
+import {
+  Container, TimezoneWrapper, Timezone,
+} from './Heatmap.style';
+import HeatmapRow from './HeatmapRow';
+import HeatmapHeaderRow from './HeatmapHeaderRow';
 
-function Heatmap() {
-  const { subreddit } = useParams(); // route param set in App
-  const { isLoading, hasError, posts } = useFetchPosts(subreddit);
-
-  if (isLoading) {
-    return (
-      <LoadingContainer>
-        <LoadingSpinner />
-      </LoadingContainer>
-    );
-  }
-
-  if (hasError) {
-    return (
-      <ErrorContainer>
-        Something went wrong. Please check the subreddit you entered then try again.
-      </ErrorContainer>
-    );
-  }
-
+function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
   return (
     <>
-      <div>{posts.length}</div>
-      <PostsTable posts={posts} />
+      <Container data-testid="heatmap">
+        <HeatmapHeaderRow />
+        {
+          postsPerDay.map((postsPerHour, day) => (
+            <HeatmapRow
+              // eslint-disable-next-line react/no-array-index-key
+              key={day}
+              day={day}
+              postsPerHour={postsPerHour}
+              onClickHour={onClickHour}
+              selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
+            />
+          ))
+        }
+      </Container>
+
+      <TimezoneWrapper>
+        All times are shown in your timezone:
+        <Timezone>{Intl.DateTimeFormat().resolvedOptions().timeZone}</Timezone>
+      </TimezoneWrapper>
     </>
   );
 }
+
+Heatmap.propTypes = {
+  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  onClickHour: func.isRequired,
+  selectedDayAndHour: shape({
+    day: number,
+    hour: number,
+  }).isRequired,
+};
 
 export default Heatmap;

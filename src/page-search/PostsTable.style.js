@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const WeekRow = styled.tr`
   width: 100%;
-/* z-index: 10;w */
 `;
 
 export const Cell = styled.td`
@@ -10,10 +9,6 @@ export const Cell = styled.td`
   height: 40px;
   width: 40px;
   text-align: center;
-  /* :hover{
-    cursor: pointer;
-    border: 1px solid red;
-  } */
 `;
 
 // merge these 2 td

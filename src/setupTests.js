@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom/extend-expect';
+import 'jest-axe/extend-expect';
 
 import server from './__mocks__/server';
 
