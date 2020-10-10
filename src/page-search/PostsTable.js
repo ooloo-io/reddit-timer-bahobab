@@ -7,7 +7,7 @@ import {
 } from './PostsTable.style';
 
 function PostsTable({ posts }) {
-  console.log('##### In PostTable', posts);
+  // console.log('##### In PostTable', posts);
   React.useEffect(() => {
 
   });
@@ -32,6 +32,7 @@ function PostsTable({ posts }) {
               } = post;
               const timePosted = (new Date(createdAt)).toLocaleTimeString();
               return (
+                // eslint-disable-next-line react/no-array-index-key
                 <TableRow key={index}>
                   <td><Link as="a" href={url}>{title}</Link></td>
                   <td>{timePosted}</td>
@@ -49,7 +50,7 @@ function PostsTable({ posts }) {
 }
 
 PostsTable.propTypes = {
-  // posts: arrayOf(number).isRequired,
+  posts: arrayOf(arrayOf(number)).isRequired,
 };
 
 export default PostsTable;

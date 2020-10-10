@@ -33,7 +33,7 @@ function HeatmapSection() {
   }
 
   const { day, hour } = selectedDayAndHour;
-  console.log('day, hour, postPerHour', day, hour, postsPerDay[day || 0][hour || 0]);
+  // console.log('day, hour, postPerHour', day, hour, postsPerDay[day || 0][hour || 0]);
   // {<pre>JSON.stringify(selectedDayAndHour)</pre>}
 
   return (
