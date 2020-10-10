@@ -20,11 +20,11 @@ test('loads 500 posts from the Reddit API', async () => {
 
   expect(result.current.isLoading).toBe(false);
   // expect(result.current.posts.length).toEqual(500);
-  expect(result.current.postsPerDay.length).toEqual(500); // 500 is MAXNUM_TO_FETCH
+  expect(getNumPosts(result.current.postsPerDay)).toEqual(500); // 500 is MAXNUM_TO_FETCH
   expect(result.current.postsPerDay).toMatchSnapshot();
 
-  const postTitles = result.current.posts.map(({ data }) => data.title);
-  expect(postTitles).toMatchSnapshot(() => useFetchPosts('500-posts'));
+  // const postTitles = result.current.posts.map(({ data }) => data.title);
+  // expect(postTitles).toMatchSnapshot(() => useFetchPosts('500-posts'));
 });
 
 test('stop loading when less than 500 posts are available', async () => {

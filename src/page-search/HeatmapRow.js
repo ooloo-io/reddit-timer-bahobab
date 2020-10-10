@@ -25,11 +25,8 @@ function HeatmapRow({
             // eslint-disable-next-line react/no-array-index-key
             key={hour}
             numPosts={numPosts}
-            onclick={() => {
-              console.log('*** hour/day clicked', hour, day);
-              onClickHour({ day, hour });
-            }}
-            selectedHour={hour === selectedHour}
+            onClick={() => onClickHour({ day, hour })}
+            selected={hour === selectedHour}
             type="button"
           >
             {numPosts}

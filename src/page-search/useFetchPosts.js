@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 const NUM_POSTS_TO_FETCH = 500;
 const MAX_NUM_POSTS_PER_PAGE = 100;
 
+let controller;
+let signal;
+
 /**
  * The reddit endpoint that we fetch the top posts from uses pagination. We can fetch a maximum
  * number of 100 posts per page. In order to fetch the first 500 posts we use this recursive
@@ -23,7 +26,7 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
   if (after) {
     url += `&after=${after}`;
   }
-  const response = await fetch(url); // should be hihjacked by mock server
+  const response = await fetch(url, { signal }); // should be hihjacked by mock server
 
   const { data } = await response.json();
   // const allPosts = [...previousPosts, ...data.children];
@@ -48,7 +51,10 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
  * @param {array} posts the concatenated list of posts returned from fetchPaginatedPosts
  * @returns {array} nested 2D array that contains the number of posts grouped by week day and hour
  */
-function groupPostsPerDayAndHour(posts) {
+async function groupPostsPerDayAndHour(posts) {
+  const totalPosts = Array(7)
+    .fill()
+    .map(() => Array(24).fill().map(() => []));
   const postsPerDay = Array(7)
     .fill()
     .map(() => Array(24).fill().map(() => 0));
@@ -57,34 +63,58 @@ function groupPostsPerDayAndHour(posts) {
     const createdAt = new Date(post.data.created_utc * 1000);
     const dayOfWeek = createdAt.getDay();
     const hour = createdAt.getHours();
-
+    //
+    const {
+      // eslint-disable-next-line camelcase
+      author, title, num_comments, score, url,
+    } = post.data;
+    totalPosts[dayOfWeek][hour].push({
+      author,
+      comments: num_comments,
+      title,
+      score,
+      createdAt,
+      url,
+    });
     postsPerDay[dayOfWeek][hour] += 1;
   });
 
-  return postsPerDay;
+  // return postsPerDay;
+  return { postsPerDay, totalPosts };
 }
 
 function useFetchPosts(subreddit) {
-  // const [posts, setPosts] = useState([]);
+  const [allPosts, setAllPosts] = useState([]);
   const [postsPerDay, setPostsPerDay] = useState([]);
   const [status, setStatus] = useState('pending');
 
   useEffect(() => {
+    controller = new AbortController();
+    signal = controller.signal;
+    let mounted = true;
     setStatus('pending');
 
     fetchPaginatedPosts(subreddit)
       .then((posts) => groupPostsPerDayAndHour(posts))
-      .then((newPostsPerDay) => {
-        setPostsPerDay(newPostsPerDay);
-        setStatus('resolved');
+      .then((postsData) => {
+        if (mounted) {
+          setPostsPerDay(postsData.postsPerDay);
+          setAllPosts(postsData.totalPosts);
+          setStatus('resolved');
+        }
       })
-      .catch(() => setStatus('rejected'));
+      .catch(() => {
+        controller.abort();
+        setStatus('rejected');
+      });
+    return () => { mounted = false; };
   }, [subreddit]);
 
   return {
     isLoading: status === 'pending',
     hasError: status === 'rejected',
     postsPerDay,
+    allPosts,
   };
 }
 

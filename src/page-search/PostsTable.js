@@ -1,97 +1,55 @@
 import React from 'react';
-import { array } from 'prop-types';
+import { Link } from 'react-router-dom';
+import { arrayOf, number } from 'prop-types';
 
-import CellWrapper from './CellWrapper';
-
-import { mapWeekday, getUserTimeZone, postsTimeSlots } from '../config';
 import {
-  WeekRow, Weekday, TimeFrame, HeatmapTable, TimeSlice, TimeSliceWrapper,
+  Headline, Table, Container, TableRow, TH,
 } from './PostsTable.style';
 
 function PostsTable({ posts }) {
-  // let myHeatmap;
+  console.log('##### In PostTable', posts);
+  React.useEffect(() => {
 
-  const postsPerHourPerDay = new Array(7)
-    .fill([])
-    .map(() => new Array(24)
-      .fill([])
-      .map(() => []));
-
-  function getDayTimeFromTimeCreated(postCreatedAt) {
-    // https://duckduckgo.com/?q=javascript+date+always+point+to+epoch+time&t=ffab&atb=v196-1&ia=web
-    const d = new Date(0);
-    const day = new Date(d.setUTCSeconds(postCreatedAt));
-    return {
-      weekday: day.getDay(),
-      timeOfDay: day.getHours(),
-    };
-  }
-
-  function buildPostsPerHourPerDayTable(subredditPosts) {
-    subredditPosts.forEach((post) => {
-      const {
-        id, author, created, title, url,
-      } = post.data;
-      const { weekday, timeOfDay } = getDayTimeFromTimeCreated(created);
-      postsPerHourPerDay[Number(weekday)][Number(timeOfDay)].push({
-        id, author, title, url, weekday, timeOfDay,
-      });
-    });
-  }
-
-  function generateHeatmap() {
-    buildPostsPerHourPerDayTable(posts);
-    // try {
-    return postsPerHourPerDay.map((weekDay, weekDayIndex) => {
-      // console.log('weekday', weekDay);
-      const weekday = mapWeekday[weekDayIndex];
-      return (
-        <WeekRow key={weekday}>
-          <Weekday className="weekday">{weekday}</Weekday>
-          {weekDay.map((postsInHour, hourIndex) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <CellWrapper key={hourIndex} postsInHour={postsInHour} />
-          ))}
-        </WeekRow>
-      );
-    });
-    // } catch (error) {
-    //   console.log('XXXXXXXXXXX', error);
-    // }
-  }
-
-  const timeLine = (
-    <TimeSliceWrapper>
-      {
-    postsTimeSlots.map((timeSlot) => (
-      <TimeSlice key={timeSlot}>{timeSlot}</TimeSlice>
-    ))
-    }
-    </TimeSliceWrapper>
-  );
-
+  });
   return (
-    <div>
-      <HeatmapTable>
-        <TimeFrame>
-          <tr>
-            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-            <th />
-            <th className="timeline" colSpan="24">{timeLine}</th>
-          </tr>
-        </TimeFrame>
+    <Container>
+      <Headline>Posts</Headline>
+      <Table>
+        <thead>
+          <TableRow>
+            <TH>Title</TH>
+            <TH>Posted</TH>
+            <TH>Score</TH>
+            <TH>Comments</TH>
+            <TH>Author</TH>
+          </TableRow>
+        </thead>
         <tbody>
-          {generateHeatmap()}
+          {
+            posts.map((post, index) => {
+              const {
+                author, createdAt, title, comments, score, url,
+              } = post;
+              const timePosted = (new Date(createdAt)).toLocaleTimeString();
+              return (
+                <TableRow key={index}>
+                  <td><Link as="a" href={url}>{title}</Link></td>
+                  <td>{timePosted}</td>
+                  <td>{score}</td>
+                  <td>{comments}</td>
+                  <td>{author}</td>
+                </TableRow>
+              );
+            })
+          }
         </tbody>
-      </HeatmapTable>
-      <div className="timezone" style={{ textAlign: 'center' }}>{getUserTimeZone()}</div>
-    </div>
+      </Table>
+    </Container>
   );
 }
 
 PostsTable.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  posts: array.isRequired,
+  // posts: arrayOf(number).isRequired,
 };
 
 export default PostsTable;

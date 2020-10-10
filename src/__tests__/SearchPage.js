@@ -62,10 +62,8 @@ describe('heatmap', () => {
     const cellToClick = cells[1];
     // expect(cellToClick).toHaveStyle('border: none');
     expect(cellToClick).toHaveStyleRule('border: none');
-    // console.log('cellToClick styles', );
 
     userEvent.click(cellToClick);
-    // console.log('<<< in test: cell clicked');
     // expect(cellToClick).toHaveStyle('border: 1px solid #1e2537');
     expect(cellToClick).toHaveStyleRule('border: 1px solid #1e2537');
   });

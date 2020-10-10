@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { array } from 'prop-types';
 
 import { cellBackgroundColorMap, cellHighlight } from '../config';
-import { Cell } from './PostsTable.style';
+import { Cell } from './_PostsTable_.style';
 
 function CellWrapper({ postsInHour }) {
   const numPosts = postsInHour.length;
