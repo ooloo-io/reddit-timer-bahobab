@@ -1,29 +1,18 @@
-import styled, { keyframes } from 'styled-components';
-import { ReactComponent as UnstyledSpinner } from './loading-spinner.svg';
+import styled from 'styled-components';
 
-export const LoadingContainer = styled.div`
+export const Container = styled.div`
+  width: ${(props) => props.theme.size.heatmap.width}px;
+  margin: auto;
+`;
+// *****************************
+
+export const TimezoneWrapper = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 56px;
-`;
-
-export const ErrorContainer = styled.div`
-  padding: 30px;
-  color: red;
+  margin-top: 10px;
   font-size: ${(props) => props.theme.font.size.small};
+  text-align: center;
 `;
 
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
-export const LoadingSpinner = styled(UnstyledSpinner)`
-  animation: ${rotate} 1.5s linear infinite;
+export const Timezone = styled.span`
+  font-weight: 600;
 `;

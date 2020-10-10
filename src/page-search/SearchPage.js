@@ -1,17 +1,16 @@
 import React from 'react';
 
-import { Container, Headline } from './SearchPage.style';
-import SubredditForm from './SubredditForm';
-import Heatmap from './Heatmap';
+// import { Container, Headline } from './FormSection.style';
+// import SubredditForm from './SubredditForm';
+import FormSection from './FormSection';
+import HeatmapSection from './HeatmapSection';
 
 function SearchPage() {
   return (
-    <Container>
-      <Headline>Find the best time for a subreddit</Headline>
-      <SubredditForm />
-
-      <Heatmap />
-    </Container>
+    <>
+      <FormSection />
+      <HeatmapSection />
+    </>
   );
 }
 
