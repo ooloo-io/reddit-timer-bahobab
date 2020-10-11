@@ -61,8 +61,6 @@ describe('post table', () => {
     expect(numPosts).not.toBe(0);
     userEvent.click(cellToClick);
 
-    // let postsTable;
-
     // posts table is shown when a box is cliked
     const postsTable = await screen.findByTestId('postsTable');
     expect(postsTable).toBeInTheDocument();
