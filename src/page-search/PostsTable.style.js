@@ -9,6 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 0px;
+
 `;
 
 export const Headline = styled.h3`
@@ -46,6 +47,7 @@ export const PostRow = styled.div`
   display: flex;
   width: 100%;
   max-width: 786px;
+
   height: 35px;
   border: solid 1px #dddddd;
   background-color: #ffffff;
