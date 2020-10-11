@@ -15,6 +15,7 @@ function HeatmapSection() {
   } = useFetchPosts(subreddit);
   const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
   const [postsTableIsVisible, setPostsTableIsVisible] = useState(false);
+
   // console.log('>>>check if selected day/hour click re-renders component', selectedDayAndHour);
   if (isLoading) {
     return (
@@ -44,6 +45,7 @@ function HeatmapSection() {
           selectedDayAndHour={selectedDayAndHour}
           onClickHour={setSelectedDayAndHour}
           showPostsTable={setPostsTableIsVisible}
+
         />
       </Container>
 

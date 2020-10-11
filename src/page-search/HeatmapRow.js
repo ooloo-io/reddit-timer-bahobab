@@ -14,12 +14,14 @@ const weekdays = [
 ];
 
 function HeatmapRow({
+
   day, postsPerHour, onClickHour, selectedHour, showPostsTable,
 }) {
   function handleClick(hour, numPosts) {
     onClickHour({ day, hour, numPosts });
     showPostsTable(numPosts !== 0);
   }
+  
   return (
     <Container>
       <Weekday>{weekdays[day]}</Weekday>
