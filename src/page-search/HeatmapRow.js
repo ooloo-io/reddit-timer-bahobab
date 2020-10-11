@@ -21,7 +21,7 @@ function HeatmapRow({
     onClickHour({ day, hour, numPosts });
     showPostsTable(numPosts !== 0);
   }
-  
+
   return (
     <Container>
       <Weekday>{weekdays[day]}</Weekday>
