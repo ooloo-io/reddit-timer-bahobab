@@ -1,56 +1,59 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { arrayOf, number } from 'prop-types';
+import { arrayOf, shape } from 'prop-types';
 
 import {
-  Headline, Table, Container, TableRow, TH,
+  Headline,
+  Container,
+  PostsHeaderRow,
+  PostRow,
+  Cell,
+  RedditLink,
+  TitleWrapper,
 } from './PostsTable.style';
 
 function PostsTable({ posts }) {
   // console.log('##### In PostTable', posts);
-  React.useEffect(() => {
+  // React.useEffect(() => {
 
-  });
+  // });
   return (
-    <Container>
+    <Container data-testid="postsTable">
       <Headline>Posts</Headline>
-      <Table>
-        <thead>
-          <TableRow>
-            <TH>Title</TH>
-            <TH>Posted</TH>
-            <TH>Score</TH>
-            <TH>Comments</TH>
-            <TH>Author</TH>
-          </TableRow>
-        </thead>
-        <tbody>
-          {
+      <PostsHeaderRow>
+        <TitleWrapper>Title</TitleWrapper>
+        <Cell>Time Posted</Cell>
+        <Cell>Score</Cell>
+        <Cell>Comments</Cell>
+        <Cell>Author</Cell>
+      </PostsHeaderRow>
+      {
             posts.map((post, index) => {
               const {
-                author, createdAt, title, comments, score, url,
+                author, createdAt, title, comments, score, permalink,
               } = post;
-              const timePosted = (new Date(createdAt)).toLocaleTimeString();
+              const timePosted = (new Date(createdAt)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+              const postUrl = `https://www.reddit.com${permalink}`;
+              const authUrl = author !== '[deleted]'
+                ? <RedditLink as="a" href={`https://reddit.com/u/${author}`} target="_blank" rel="noopener noreferrer">{author}</RedditLink>
+                : author;
               return (
                 // eslint-disable-next-line react/no-array-index-key
-                <TableRow key={index}>
-                  <td><Link as="a" href={url}>{title}</Link></td>
-                  <td>{timePosted}</td>
-                  <td>{score}</td>
-                  <td>{comments}</td>
-                  <td>{author}</td>
-                </TableRow>
+                <PostRow key={index} data-testid="postRow">
+                  <TitleWrapper><RedditLink as="a" href={postUrl} target="_blank" rel="noopener noreferrer">{title}</RedditLink></TitleWrapper>
+                  <Cell><div style={{ whiteSpace: 'nowrap' }}>{timePosted}</div></Cell>
+                  <Cell>{score}</Cell>
+                  <Cell>{comments}</Cell>
+                  <Cell>{authUrl}</Cell>
+                </PostRow>
               );
             })
           }
-        </tbody>
-      </Table>
     </Container>
   );
 }
 
 PostsTable.propTypes = {
-  posts: arrayOf(arrayOf(number)).isRequired,
+  posts: arrayOf(shape).isRequired,
 };
 
 export default PostsTable;

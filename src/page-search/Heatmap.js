@@ -9,7 +9,9 @@ import {
 import HeatmapRow from './HeatmapRow';
 import HeatmapHeaderRow from './HeatmapHeaderRow';
 
-function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
+function Heatmap({
+  postsPerDay, onClickHour, selectedDayAndHour, showPostsTable,
+}) {
   return (
     <>
       <Container data-testid="heatmap">
@@ -23,6 +25,7 @@ function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
               postsPerHour={postsPerHour}
               onClickHour={onClickHour}
               selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
+              showPostsTable={showPostsTable}
             />
           ))
         }
@@ -43,6 +46,7 @@ Heatmap.propTypes = {
     day: number,
     hour: number,
   }).isRequired,
+  showPostsTable: func.isRequired,
 };
 
 export default Heatmap;

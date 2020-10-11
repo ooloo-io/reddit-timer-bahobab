@@ -66,7 +66,7 @@ async function groupPostsPerDayAndHour(posts) {
     //
     const {
       // eslint-disable-next-line camelcase
-      author, title, num_comments, score, url,
+      author, title, num_comments, score, permalink,
     } = post.data;
     totalPosts[dayOfWeek][hour].push({
       author,
@@ -74,7 +74,7 @@ async function groupPostsPerDayAndHour(posts) {
       title,
       score,
       createdAt,
-      url,
+      permalink,
     });
     postsPerDay[dayOfWeek][hour] += 1;
   });
