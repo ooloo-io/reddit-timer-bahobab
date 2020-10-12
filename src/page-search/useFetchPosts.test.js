@@ -4,10 +4,12 @@ import useFetchPosts from './useFetchPosts';
 
 const getNumPosts = (nestedPostsArray) => nestedPostsArray.reduce(
   (numTotal, postsPerDay) => postsPerDay.reduce(
-    (numPerDay, postsPerHour) => numPerDay + postsPerHour, numTotal,
+    (numPerDay, postsPerHour) => numPerDay + postsPerHour.length, numTotal,
   ),
   0,
 );
+
+// const getPostsPerHout
 
 test('loads 500 posts from the Reddit API', async () => {
   const { result, waitForNextUpdate } = renderHook(() => useFetchPosts('500-posts'));

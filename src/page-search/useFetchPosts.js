@@ -49,38 +49,51 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
  * dayOfWeek is a number between 0 and 6, hour a number between 0 and 23.
  *
  * @param {array} posts the concatenated list of posts returned from fetchPaginatedPosts
- * @returns {array} nested 2D array that contains the number of posts grouped by week day and hour
+ * @returns {array} nested 3D array that contains the posts grouped by week day and hour
  */
 async function groupPostsPerDayAndHour(posts) {
-  const totalPosts = Array(7)
-    .fill()
-    .map(() => Array(24).fill().map(() => []));
+  // const totalPosts = Array(7)
+  //   .fill()
+  //   .map(() => Array(24).fill().map(() => []));
   const postsPerDay = Array(7)
     .fill()
-    .map(() => Array(24).fill().map(() => 0));
+    .map(() => Array(24).fill().map(() => []));
 
   posts.forEach((post) => {
-    const createdAt = new Date(post.data.created_utc * 1000);
-    const dayOfWeek = createdAt.getDay();
-    const hour = createdAt.getHours();
-    //
-    const {
-      // eslint-disable-next-line camelcase
-      author, title, num_comments, score, url,
-    } = post.data;
-    totalPosts[dayOfWeek][hour].push({
-      author,
-      comments: num_comments,
-      title,
-      score,
-      createdAt,
-      url,
+    // const createdAt = new Date(post.data.created_utc * 1000);
+    // const dayOfWeek = createdAt.getDay();
+    // const hour = createdAt.getHours();
+    // //
+    // const {
+    //   // eslint-disable-next-line camelcase
+    //   author, title, num_comments, score, permalink,
+    // } = post.data;
+    // totalPosts[dayOfWeek][hour].push({
+    //   author,
+    //   comments: num_comments,
+    //   title,
+    //   score,
+    //   createdAt,
+    //   permalink,
+    // });
+    // postsPerDay[dayOfWeek][hour] += 1;
+
+    const createdAtDate = new Date(post.data.created_utc * 1000);
+    const dayOfWeek = createdAtDate.getDay();
+    const hour = createdAtDate.getHours();
+
+    postsPerDay[dayOfWeek][hour].push({
+      createdAt: createdAtDate,
+      title: post.data.title,
+      url: `https://reddit.com${post.data.permalink}`,
+      score: post.data.score,
+      numComments: post.data.num_comments,
+      author: post.data.author,
     });
-    postsPerDay[dayOfWeek][hour] += 1;
   });
 
   // return postsPerDay;
-  return { postsPerDay, totalPosts };
+  return { postsPerDay };
 }
 
 function useFetchPosts(subreddit) {

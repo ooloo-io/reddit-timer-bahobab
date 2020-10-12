@@ -11,11 +11,9 @@ import {
 function HeatmapSection() {
   const { subreddit } = useParams(); // route param set in App
   const {
-    isLoading, hasError, postsPerDay, allPosts,
+    isLoading, hasError, postsPerDay,
   } = useFetchPosts(subreddit);
   const [selectedDayAndHour, setSelectedDayAndHour] = useState({ day: null, hour: null });
-
-  // console.log('>>>check if selected day/hour click re-renders component', selectedDayAndHour);
   if (isLoading) {
     return (
       <LoadingContainer>
@@ -33,8 +31,7 @@ function HeatmapSection() {
   }
 
   const { day, hour } = selectedDayAndHour;
-  // console.log('day, hour, postPerHour', day, hour, postsPerDay[day || 0][hour || 0]);
-  // {<pre>JSON.stringify(selectedDayAndHour)</pre>}
+  const selectedPosts = (postsPerDay[day] && postsPerDay[day][hour]) || [];
 
   return (
     <>
@@ -43,13 +40,14 @@ function HeatmapSection() {
           postsPerDay={postsPerDay}
           selectedDayAndHour={selectedDayAndHour}
           onClickHour={setSelectedDayAndHour}
+          // showPostsTable={setPostsTableIsVisible}
         />
-      </Container>
 
-      <Container as="section">
         {
-        day && hour && <PostsTable posts={allPosts[day][hour]} />
-      }
+          selectedPosts.length > 0 && (
+            <PostsTable posts={selectedPosts} />
+          )
+        }
       </Container>
     </>
   );

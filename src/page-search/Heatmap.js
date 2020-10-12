@@ -3,13 +3,16 @@ import {
   arrayOf, func, number, shape,
 } from 'prop-types';
 
+import propTypes from './propTypes';
 import {
   Container, TimezoneWrapper, Timezone,
 } from './Heatmap.style';
 import HeatmapRow from './HeatmapRow';
 import HeatmapHeaderRow from './HeatmapHeaderRow';
 
-function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
+function Heatmap({
+  postsPerDay, onClickHour, selectedDayAndHour,
+}) {
   return (
     <>
       <Container data-testid="heatmap">
@@ -37,7 +40,7 @@ function Heatmap({ postsPerDay, onClickHour, selectedDayAndHour }) {
 }
 
 Heatmap.propTypes = {
-  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  postsPerDay: arrayOf(arrayOf(arrayOf(propTypes.post))).isRequired,
   onClickHour: func.isRequired,
   selectedDayAndHour: shape({
     day: number,

@@ -29,6 +29,12 @@ const setup = (initialPath = '/') => {
   return { ...view, history };
 };
 
+async function clickFirstCellWithValue(cellValue) {
+  const heatmap = await screen.findByTestId('heatmap');
+  const cell = within(heatmap).getAllByText(cellValue)[0]; // first cell
+  userEvent.click(cell);
+}
+
 describe('heatmap', () => {
   it('loads top post for subreddit in URL', async () => {
     setup('/search/reactjs');
@@ -108,7 +114,67 @@ describe('subreddit form', () => {
   it('no accessibility violation', async () => {
     const { container } = setup('/search/reactjs');
 
-    expect(await screen.findByTestId('heatmap')).toBeInTheDocument();
+    // expect(await screen.findByTestId('heatmap')).toBeInTheDocument();
+    await clickFirstCellWithValue('3');
+
     expect(await axe(container)).toHaveNoViolations();
+  });
+});
+
+describe('posts table', () => {
+  it('not visible when no cell clicked', async () => {
+    setup('/search/reactjs');
+    await screen.findByTestId('heatmap');
+
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+  });
+
+  it('not visible when cell clicked has value 0', async () => {
+    setup('/search/reactjs');
+    await clickFirstCellWithValue('0'); // argument is string
+
+    expect(screen.queryByRole('table')).not.toBeInTheDocument();
+  });
+
+  it('shows posts ordered by time acording to cell clicked', async () => {
+    setup('/search/reactjs');
+    await clickFirstCellWithValue('3'); // argument is string
+
+    const table = screen.getByRole('table');
+    const tableRows = within(table)
+      .getAllByRole('row')
+      .slice(1); // return rows in tbody, exclude header row
+
+    const tableContents = tableRows.map((row) => {
+      const cells = within(row).getAllByRole('cell');
+      const titleLink = within(cells[0]).getByRole('link');
+      const authorLink = within(cells[4]).getByRole('link');
+
+      return {
+        title: titleLink.innerHTML,
+        href: titleLink.href,
+        time: cells[1].innerHTML,
+        score: cells[2].innerHTML,
+        numComments: cells[4].innerHTML,
+        author: authorLink.innerHTML,
+        authorLink: authorLink.href,
+      };
+    });
+
+    expect(tableContents).toMatchSnapshot();
+  });
+
+  it('shows no link for deleted author', async () => {
+    setup('/search/reactjs');
+    const heatmap = await screen.findByTestId('heatmap');
+    const hasDeletedAuthor = within(heatmap).getAllByText('3')[4];
+    userEvent.click(hasDeletedAuthor);
+
+    const table = screen.getByRole('table');
+    const rowWithDeletedUser = within(table).getAllByRole('row')[2];
+
+    const authorCell = within(rowWithDeletedUser).getAllByRole('cell')[4];
+    expect(within(authorCell).queryByRole('link')).not.toBeInTheDocument();
+    expect(authorCell.innerHTML).toBe('[deleted]');
   });
 });

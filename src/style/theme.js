@@ -25,6 +25,9 @@ const theme = {
     midLight: '#d5d5d5',
     light: '#fff',
     primary: '#fdb755',
+    postsTable: {
+      link: '#0087ff',
+    },
     heatmap: {
       dayBackground: '#1e2537',
       hourBackground: [
