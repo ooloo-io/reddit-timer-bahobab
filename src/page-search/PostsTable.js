@@ -1,59 +1,84 @@
 import React from 'react';
-
-import { arrayOf, shape } from 'prop-types';
+import { arrayOf } from 'prop-types';
 
 import {
-  Headline,
   Container,
-  PostsHeaderRow,
-  PostRow,
-  Cell,
-  RedditLink,
-  TitleWrapper,
+  Headline,
+  Table,
+  Row,
+  HeaderColumn,
+  Column,
+  TitleColumn,
+  AuthorColumn,
+  Link,
 } from './PostsTable.style';
+
+import propTypes from './propTypes';
+import PostAuthor from './PostAuthor';
+
+function sortPosts(posts) {
+  // posts passed by ref so avoid mutation with aray destructuring
+  return [...posts].sort((a, b) => a.createdAt.getMinutes() - b.createdAt.getMinutes());
+}
+
+function getDisplayTime({ createdAt }) {
+  return createdAt
+    .toLocaleString('en-US', { hour: 'numeric', minutes: 'numeric', hour12: true })
+    .toLowerCase();
+}
 
 function PostsTable({ posts }) {
   return (
-    <Container data-testid="postsTable">
+    <Container>
       <Headline>Posts</Headline>
-      <PostsHeaderRow>
-        <TitleWrapper>Title</TitleWrapper>
-        <Cell>Time Posted</Cell>
-        <Cell>Score</Cell>
-        <Cell>Comments</Cell>
-        <Cell>Author</Cell>
-      </PostsHeaderRow>
-      {
-        posts
-          .sort((post1, post2) => (
-            new Date(post1.createdAt).getMinutes()) - (new Date(post2.createdAt).getMinutes()))
-          .map((post, index) => {
-            const {
-              author, createdAt, title, comments, score, permalink,
-            } = post;
-            const timePosted = (new Date(createdAt)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            const postUrl = `https://www.reddit.com${permalink}`;
-            const authUrl = author !== '[deleted]'
-              ? <RedditLink as="a" href={`https://reddit.com/u/${author}`} target="_blank" rel="noopener noreferrer">{author}</RedditLink>
-              : author;
-            return (
-            // eslint-disable-next-line react/no-array-index-key
-              <PostRow key={index} data-testid="postRow">
-                <TitleWrapper><RedditLink as="a" href={postUrl} target="_blank" rel="noopener noreferrer">{title}</RedditLink></TitleWrapper>
-                <Cell><div style={{ whiteSpace: 'nowrap' }}>{timePosted}</div></Cell>
-                <Cell>{score}</Cell>
-                <Cell>{comments}</Cell>
-                <Cell>{authUrl}</Cell>
-              </PostRow>
-            );
-          })
-          }
+
+      <Table>
+        <thead>
+          <Row>
+            <HeaderColumn>Title</HeaderColumn>
+            <HeaderColumn>Time Posted</HeaderColumn>
+            <HeaderColumn>Score</HeaderColumn>
+            <HeaderColumn>Comments</HeaderColumn>
+            <HeaderColumn>Author</HeaderColumn>
+          </Row>
+        </thead>
+
+        <tbody>
+          {
+          sortPosts(posts).map((post) => (
+            <Row key={post.url}>
+              <TitleColumn>
+                <Link
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {post.title}
+                </Link>
+              </TitleColumn>
+              <Column>
+                {getDisplayTime(post)}
+              </Column>
+              <Column>
+                {post.score}
+              </Column>
+              <Column>
+                {post.numComments}
+              </Column>
+              <AuthorColumn>
+                <PostAuthor author={post.author} />
+              </AuthorColumn>
+            </Row>
+          ))
+        }
+        </tbody>
+      </Table>
     </Container>
   );
 }
 
 PostsTable.propTypes = {
-  posts: arrayOf(shape).isRequired,
+  posts: arrayOf(propTypes.post).isRequired,
 };
 
 export default PostsTable;

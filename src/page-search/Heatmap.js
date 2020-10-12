@@ -3,6 +3,7 @@ import {
   arrayOf, func, number, shape,
 } from 'prop-types';
 
+import propTypes from './propTypes';
 import {
   Container, TimezoneWrapper, Timezone,
 } from './Heatmap.style';
@@ -10,7 +11,7 @@ import HeatmapRow from './HeatmapRow';
 import HeatmapHeaderRow from './HeatmapHeaderRow';
 
 function Heatmap({
-  postsPerDay, onClickHour, selectedDayAndHour, showPostsTable,
+  postsPerDay, onClickHour, selectedDayAndHour,
 }) {
   return (
     <>
@@ -25,7 +26,6 @@ function Heatmap({
               postsPerHour={postsPerHour}
               onClickHour={onClickHour}
               selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
-              showPostsTable={showPostsTable}
             />
           ))
         }
@@ -40,15 +40,12 @@ function Heatmap({
 }
 
 Heatmap.propTypes = {
-  postsPerDay: arrayOf(arrayOf(number)).isRequired,
+  postsPerDay: arrayOf(arrayOf(arrayOf(propTypes.post))).isRequired,
   onClickHour: func.isRequired,
   selectedDayAndHour: shape({
     day: number,
     hour: number,
   }).isRequired,
-
-  showPostsTable: func.isRequired,
-
 };
 
 export default Heatmap;

@@ -4,7 +4,7 @@ import useFetchPosts from './useFetchPosts';
 
 const getNumPosts = (nestedPostsArray) => nestedPostsArray.reduce(
   (numTotal, postsPerDay) => postsPerDay.reduce(
-    (numPerDay, postsPerHour) => numPerDay + postsPerHour, numTotal,
+    (numPerDay, postsPerHour) => numPerDay + postsPerHour.length, numTotal,
   ),
   0,
 );
@@ -46,23 +46,4 @@ test('returns error when the request fails', async () => {
 
   expect(result.current.isLoading).toBe(false);
   expect(result.current.hasError).toBe(true);
-});
-
-describe('posts table', () => {
-  it('posts are sorted by time posted in user timezone', async () => {
-    const { result, waitForNextUpdate } = renderHook(() => useFetchPosts('500-posts'));
-
-    await waitForNextUpdate();
-
-    expect(result.current.isLoading).toBe(false);
-
-    const day = 0;
-    const hour = 4;
-
-    const numPosts = result.current.postsPerDay[day][hour];
-    const posts = result.current.allPosts[day][hour];
-
-    expect(numPosts).toEqual(posts.length);
-    // the time is the time when the post was created in the timezone of the current user
-  });
 });
