@@ -55,7 +55,7 @@ describe('post table', () => {
 
     // it is shown when there are posts for the selected weekday/hour
     // eslint-disable-next-line prefer-destructuring
-    cellToClick = cells[28];
+    cellToClick = cells[28]; // contains a deketed author
     numPosts = Number(cellToClick.innerHTML);
 
     expect(numPosts).not.toBe(0);
@@ -91,9 +91,6 @@ describe('post table', () => {
         // the author links opens in a new browser tab
         expect(links[1]).toHaveAttribute('target', '_blank');
       }
-
-      // the time is the time when the post was created in the timezone of the current user
-      // use useFetchPost hook
 
       // the posts are sorted by the time they have been created
     });

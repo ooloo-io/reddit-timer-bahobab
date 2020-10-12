@@ -13,10 +13,6 @@ import {
 } from './PostsTable.style';
 
 function PostsTable({ posts }) {
-  // console.log('##### In PostTable', posts);
-  // React.useEffect(() => {
-
-  // });
   return (
     <Container data-testid="postsTable">
       <Headline>Posts</Headline>
@@ -28,26 +24,29 @@ function PostsTable({ posts }) {
         <Cell>Author</Cell>
       </PostsHeaderRow>
       {
-            posts.map((post, index) => {
-              const {
-                author, createdAt, title, comments, score, permalink,
-              } = post;
-              const timePosted = (new Date(createdAt)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-              const postUrl = `https://www.reddit.com${permalink}`;
-              const authUrl = author !== '[deleted]'
-                ? <RedditLink as="a" href={`https://reddit.com/u/${author}`} target="_blank" rel="noopener noreferrer">{author}</RedditLink>
-                : author;
-              return (
-                // eslint-disable-next-line react/no-array-index-key
-                <PostRow key={index} data-testid="postRow">
-                  <TitleWrapper><RedditLink as="a" href={postUrl} target="_blank" rel="noopener noreferrer">{title}</RedditLink></TitleWrapper>
-                  <Cell><div style={{ whiteSpace: 'nowrap' }}>{timePosted}</div></Cell>
-                  <Cell>{score}</Cell>
-                  <Cell>{comments}</Cell>
-                  <Cell>{authUrl}</Cell>
-                </PostRow>
-              );
-            })
+        posts
+          .sort((post1, post2) => (
+            new Date(post1.createdAt).getMinutes()) - (new Date(post2.createdAt).getMinutes()))
+          .map((post, index) => {
+            const {
+              author, createdAt, title, comments, score, permalink,
+            } = post;
+            const timePosted = (new Date(createdAt)).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const postUrl = `https://www.reddit.com${permalink}`;
+            const authUrl = author !== '[deleted]'
+              ? <RedditLink as="a" href={`https://reddit.com/u/${author}`} target="_blank" rel="noopener noreferrer">{author}</RedditLink>
+              : author;
+            return (
+            // eslint-disable-next-line react/no-array-index-key
+              <PostRow key={index} data-testid="postRow">
+                <TitleWrapper><RedditLink as="a" href={postUrl} target="_blank" rel="noopener noreferrer">{title}</RedditLink></TitleWrapper>
+                <Cell><div style={{ whiteSpace: 'nowrap' }}>{timePosted}</div></Cell>
+                <Cell>{score}</Cell>
+                <Cell>{comments}</Cell>
+                <Cell>{authUrl}</Cell>
+              </PostRow>
+            );
+          })
           }
     </Container>
   );
