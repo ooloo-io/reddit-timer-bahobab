@@ -6,7 +6,8 @@ const theme = {
     color: {
       default: 'red',
     },
-    default: 'linear-gradient(to right,rgba(255, 0, 0, 0), rgba(255, 0, 0, 1))',
+    // default: 'linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%)',
+    default: '#fff',
   },
   size: {
     headerHeight: '100px',
