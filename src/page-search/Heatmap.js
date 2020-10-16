@@ -9,14 +9,20 @@ import {
 } from './Heatmap.style';
 import HeatmapRow from './HeatmapRow';
 import HeatmapHeaderRow from './HeatmapHeaderRow';
+import BgColorScheme from './BgColorScheme';
 
 function Heatmap({
   postsPerDay, onClickHour, selectedDayAndHour,
 }) {
+  const [backgroundColorCheme, setBackgroundColorCheme] = React.useState('hourBackgroundDefault');
+
   return (
     <>
       <Container data-testid="heatmap">
-        <HeatmapHeaderRow />
+        <div style={{ height: '52px', display: 'flex' }}>
+          <BgColorScheme onBgColorSelect={setBackgroundColorCheme} />
+          <HeatmapHeaderRow />
+        </div>
         {
           postsPerDay.map((postsPerHour, day) => (
             <HeatmapRow
@@ -26,6 +32,7 @@ function Heatmap({
               postsPerHour={postsPerHour}
               onClickHour={onClickHour}
               selectedHour={selectedDayAndHour.day === day ? selectedDayAndHour.hour : null}
+              bgColorScheme={backgroundColorCheme}
             />
           ))
         }
