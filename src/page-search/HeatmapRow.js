@@ -17,7 +17,6 @@ const weekdays = [
 ];
 
 function HeatmapRow({
-
   day, postsPerHour, onClickHour, selectedHour, bgColorScheme,
 }) {
   return (
