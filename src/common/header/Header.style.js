@@ -12,6 +12,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
 `;
 
 export const Logo = styled(UnstyledLogo)`
@@ -23,7 +24,8 @@ export const Logo = styled(UnstyledLogo)`
 export const HeaderLink = styled(Link)`
   margin-left: 26px;
   text-decoration: none;
-  color: ${(props) => props.theme.color.midDark}
+  color: ${(props) => props.theme.color.midDark};
+
 `;
 
 /* export const HashLink = styled.a`

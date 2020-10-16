@@ -1,68 +1,116 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- I use this template: https://github.com/dbader/readme-template/blob/master/README.md -->
+# Reddit Timer
+### or How to find the best time to post your subreddit
+Use historical posts data to determine the best time to post a subreddit.
 
-## Available Scripts
+This project is the result of a course by ooloo.io.
+The project goal is to build a professional web app with professional tools and methods.
 
-In the project directory, you can run:
+The lead developer at ooloo.io provided the project designs in Zeplin and tasks managed in Clickup management tool.
+One of the requirements is that each taks be implemented within its own pull request(PR). And the PR is reviewed by the lead developer before it's merged.
 
-### `yarn start`
+Beside the project being implemented with the React library, additional tools and packages nesesary to deliver the project to plan were free to choose.
+And on on occasion, I used TDD methodology to implement some tasks, such as header, footer, form tasks.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To ensure code quality and conformity an end to end (e2e) Cypress test suite was provided.
+I implemented the integragration tests using React Testing-Library to meet the project's acceptance criteria (AC).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Tech Stack used:
+1. React/React Hooks
+2. Styled-components
+3. Cypress
+4. React Testing-Library
 
-### `yarn test`
+## Tools
+1. ClickUp
+2. Zeplin
+3. Perfect Pixel
+4. GitHub
+5. Slack
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## I Proposed Added Features
+In addition to the original AC, I proposed and implemented these features:
 
-### `yarn build`
+1. highlights for cells containing posts with deleted author
+2. display the posts table in modal mode
+3. choose the heatmap color theme
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+One to two paragraph statement about your product and what it does.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![](header.png)
 
-### `yarn eject`
+## Highlights
+Use of styled-components makes it easy to solve css issues for the heatmap color scheme.
+Tags are components that offer flexibility and ease of stiling
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Efficient multiple fetch call using recursion
+Effective use of function compositing to simplify code readability
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Testing using snapshot for the table that has 168 cells.
+Avoid data mutation on a parameter passed by reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Take Away from this Project:
 
-## Learn More
+1. Work as Pro frontend developer using Pro methodology and Tools:
+- Agile project management with ClickUp
+- Slack Team collaboration platform
+- E2E testing with Cypress
+- Jest and React Testing-library (with hooks and mocks)
+- Team linting style
+2. Professional Git pull request (PR) workflow:
+- pull requests (PR)
+- code review
+- branch merge
+3. Production Deployment
+- Live app deployed to Netlify with CC/CI webhook
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+OS X & Linux:
+```sh
+yarn install
+```
 
-### Code Splitting
+## Usage
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+After all the packages have been successfully installed, you can run:
 
-### Analyzing the Bundle Size
+```sh
+yarn start
+```
+## Test
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Run the tests with:
 
-### Making a Progressive Web App
+```sh
+yarn test
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## Meta
 
-### Advanced Configuration
+Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-### Deployment
+[https://github.com/yourname/github-link](https://github.com/dbader/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Contributing
 
-### `yarn build` fails to minify
+1. Fork it (<https://github.com/yourname/yourproject/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
