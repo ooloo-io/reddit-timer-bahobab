@@ -45,4 +45,5 @@ export const HeaderLink = styled(Link)`
 
   @media (max-width: 768px) {
     margin: 0px;
+  }
 `;
