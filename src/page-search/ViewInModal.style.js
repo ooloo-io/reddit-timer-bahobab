@@ -11,9 +11,18 @@ export const Container = styled.div`
 export const Label = styled.label`
   font-size: ${(props) => props.theme.font.size.small};
   color: red;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: red;
+    color: #ffffff;
+  }
 `;
 
 export const Input = styled.input`
   margin-left: 10px;
-
+  cursor: pointer;
 `;

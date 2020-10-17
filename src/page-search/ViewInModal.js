@@ -10,7 +10,7 @@ function ViewInModal({ viewInModalCheck }) {
   }
   return (
     <Container>
-      <Label htmlFor="viewInModal">
+      <Label htmlFor="viewInModal" title="display posts table in modal window">
         Show Posts in Modal Windaow
         <Input id="viewInModal" type="checkbox" name="" onClick={handleClick} />
       </Label>

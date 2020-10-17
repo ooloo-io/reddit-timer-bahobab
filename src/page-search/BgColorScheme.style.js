@@ -24,6 +24,22 @@ export const ColorScheme = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: ${(props) => props.theme.font.size.small};
+`;
+
+export const Input = styled.input`
+  cursor: pointer;
+`;
+
+export const Label = styled.label`
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    padding: 2px 5px;
+    border-radius: 5px;
+    background-color: red;
+    color: #ffffff;
+  }
 `;
