@@ -10,14 +10,15 @@ export const Container = styled.div`
 
 export const Label = styled.label`
   font-size: ${(props) => props.theme.font.size.small};
-  color: red;
+  color: ${(props) => props.theme.color.heatmap.highlight};
+  font-weight: bolder;
   cursor: pointer;
   transition: 0.5s;
 
   &:hover {
     padding: 2px 5px;
     border-radius: 5px;
-    background-color: red;
+    background-color: ${(props) => props.theme.color.heatmap.highlight};
     color: #ffffff;
   }
 `;

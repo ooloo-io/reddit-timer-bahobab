@@ -30,6 +30,7 @@ const theme = {
       link: '#0087ff',
     },
     heatmap: {
+      highlight: '#c0392b',
       dayBackground: '#1e2537',
       hourBackgroundDefault: [
         '#e0e592',
