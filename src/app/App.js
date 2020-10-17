@@ -19,12 +19,12 @@ function App() {
         <Switch>
           <Route path="/search/:subreddit">
             <SearchPage />
-            <p>Search Page</p>
+            {/* <p>Search Page</p> */}
           </Route>
           <Route path="/terms">Terms Page</Route>
           <Route path="/">
             <HomePage />
-            <p>Home Page</p>
+            {/* <p>Home Page</p> */}
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -79,7 +79,8 @@ function SubredditForm() {
     <Container>
       <Form onSubmit={handleSubmit}>
         <Label>
-          r /
+          r/
+          {' '}
           <Input
             type="text"
             value={subreddit}

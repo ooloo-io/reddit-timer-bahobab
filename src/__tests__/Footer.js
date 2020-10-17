@@ -26,11 +26,12 @@ const setup = (initialPath = '/') => {
 
 describe('footer', () => {
   it('navigates to the home page when the logo is clicked', () => {
-    setup('/search/javascript');
+    const { history } = setup('/search/javascript');
     const logoLink = screen.getByRole('link', { name: /sign.svg/i });
     userEvent.click(logoLink);
 
-    expect(screen.getByText(/home page/i)).toBeInTheDocument();
+    expect(history.location.pathname).toEqual('/');
+    // expect(screen.getByText(/home page/i)).toBeInTheDocument();
   });
 
   it('navigates to terms page when terms link is clicked', () => {

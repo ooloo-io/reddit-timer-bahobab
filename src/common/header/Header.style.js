@@ -12,22 +12,38 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    padding: 0;
+    flex-direction: column;
+}
+`;
+
+export const Nav = styled.nav`
+  @media (max-width: 768px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 `;
 
 export const Logo = styled(UnstyledLogo)`
   display: block;
   width: 150px;
   height: 36px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `;
 
 export const HeaderLink = styled(Link)`
   margin-left: 26px;
   text-decoration: none;
-  color: ${(props) => props.theme.color.midDark}
-`;
+  color: ${(props) => props.theme.color.midDark};
 
-/* export const HashLink = styled.a`
-  margin-left: 26px;
-  text-decoration: none;
-  color: ${(props) => props.theme.color.midDark}
-`; */
+  @media (max-width: 768px) {
+    margin: 0px;
+  }
+`;

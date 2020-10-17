@@ -84,7 +84,7 @@ describe('heatmap', () => {
 describe('subreddit form', () => {
   it('updates the URL when submitting the form', async () => {
     const { history } = setup('/search/python');
-    const searchInput = screen.getByLabelText('r /');
+    const searchInput = screen.getByLabelText('r/');
 
     expect(searchInput.value).toBe('python');
 

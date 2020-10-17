@@ -1,5 +1,7 @@
 import React from 'react';
-import { arrayOf, func, number } from 'prop-types';
+import {
+  arrayOf, func, number, string,
+} from 'prop-types';
 
 import propTypes from './propTypes';
 import { Container, Weekday, Hour } from './HeatmapRow.style';
@@ -15,25 +17,32 @@ const weekdays = [
 ];
 
 function HeatmapRow({
-
-  day, postsPerHour, onClickHour, selectedHour,
+  day, postsPerHour, onClickHour, selectedHour, bgColorScheme,
 }) {
   return (
     <Container>
       <Weekday>{weekdays[day]}</Weekday>
       {
-        postsPerHour.map((posts, hour) => (
-          <Hour
+        postsPerHour.map((posts, hour) => {
+          const deletedStyle = posts.some((post) => post.author.includes('[deleted]'))
+            ? { border: '1px dotted red' }
+            : null;
+
+          return (
+            <Hour
             // eslint-disable-next-line react/no-array-index-key
-            key={hour}
-            numPosts={posts.length}
-            onClick={() => onClickHour({ day, hour })}
-            selected={hour === selectedHour}
-            type="button"
-          >
-            {posts.length}
-          </Hour>
-        ))
+              key={hour}
+              numPosts={posts.length}
+              onClick={() => onClickHour({ day, hour })}
+              selected={hour === selectedHour}
+              type="button"
+              bgColorScheme={bgColorScheme}
+              style={deletedStyle}
+            >
+              {posts.length}
+            </Hour>
+          );
+        })
       }
     </Container>
   );
@@ -44,10 +53,12 @@ HeatmapRow.propTypes = {
   postsPerHour: arrayOf(arrayOf(propTypes.post)).isRequired,
   onClickHour: func.isRequired,
   selectedHour: number,
+  bgColorScheme: string,
 };
 
 HeatmapRow.defaultProps = {
   selectedHour: null,
+  bgColorScheme: 'hourBackground',
 };
 
 export default HeatmapRow;

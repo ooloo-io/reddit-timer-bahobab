@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
-const getBackgroundColor = ({ numPosts, theme }) => {
-  const backgroundColors = theme.color.heatmap.hourBackground;
+const getBackgroundColor = ({ numPosts, theme, bgColorScheme }) => {
+  const backgroundColors = theme.color.heatmap[bgColorScheme];
 
   if (numPosts >= backgroundColors.length) {
     return backgroundColors[backgroundColors.length - 1];

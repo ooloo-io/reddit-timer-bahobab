@@ -18,6 +18,10 @@ export const Input = styled.input`
   font-size: ${(props) => props.theme.font.size.small};
   color: ${(props) => props.theme.color.dark};
   border: 1px solid ${(props) => props.theme.color.midLight};
+
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+  }
 `;
 
 export const ResultsWrapper = styled.section`
