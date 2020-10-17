@@ -35,16 +35,26 @@ describe('feature #1: choose heatmap color scheme', () => {
 
     expect(await screen.findByRole('heading', { name: 'Color Scheme' })).toBeInTheDocument();
 
+    // default color schelme
     const defaultColorScheme = screen.getByLabelText('default');
+    // choco color scheme
     const chocoColorScheme = screen.getByLabelText('choco');
 
+    // select choco color scheme
+    userEvent.click(chocoColorScheme);
+    expect(chocoColorScheme.checked).toBe(true);
+    expect(defaultColorScheme.checked).toBe(false);
+
+    const chocoHeatmap = await screen.findByTestId('heatmap');
+    expect(chocoHeatmap).toMatchSnapshot();
+
+    // switch back to default color scheme
     userEvent.click(defaultColorScheme);
     expect(defaultColorScheme.checked).toBe(true);
     expect(chocoColorScheme.checked).toBe(false);
 
-    userEvent.click(chocoColorScheme);
-    expect(chocoColorScheme.checked).toBe(true);
-    expect(defaultColorScheme.checked).toBe(false);
+    const defaultHeatmap = await screen.findByTestId('heatmap');
+    expect(defaultHeatmap).toMatchSnapshot();
   });
 });
 

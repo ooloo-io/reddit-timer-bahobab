@@ -66,7 +66,7 @@ function HeatmapSection() {
         canOpenCell && shouldModalOpen && modalMode && (
           <Modal id="myModal" className="modal">
             <div className="modal-content" data-testid="postsModal">
-              <CloseModal as="button" className="closeModal" onClick={() => setShouldModelOpen(false)}>&times;</CloseModal>
+              <CloseModal data-cy="closeModal" as="button" className="closeModal" onClick={() => setShouldModelOpen(false)}>&times;</CloseModal>
               <PostsTable posts={selectedPosts} />
             </div>
           </Modal>
