@@ -4,6 +4,10 @@ export const Form = styled.form`
   margin: 20px 0 0;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Label = styled.label`
@@ -19,8 +23,9 @@ export const Input = styled.input`
   color: ${(props) => props.theme.color.dark};
   border: 1px solid ${(props) => props.theme.color.midLight};
 
-  @media screen and (max-width: 768px) {
-    width: 50vw;
+  @media (max-width: 768px) {
+    width: 60vw;
+    margin: 10px 0;
   }
 `;
 

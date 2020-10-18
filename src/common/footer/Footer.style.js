@@ -10,6 +10,10 @@ export const Container = styled.footer`
   margin: 0 auto;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0px 20px;
+  }
 `;
 
 export const Sign = styled(UnstyledSign)`

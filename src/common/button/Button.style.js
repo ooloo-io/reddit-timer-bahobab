@@ -8,8 +8,9 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   font-weight: 500;
+  color: #ffff;
   font-size: ${(props) => props.theme.font.size.small};
-  color: ${(props) => props.theme.color.primary};
+  background-color: ${(props) => props.theme.color.primary};
   cursor: pointer;
   text-transform: uppercase;
 `;
