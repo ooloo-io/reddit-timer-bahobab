@@ -20,24 +20,24 @@ I implemented the integragration tests using React Testing-Library to meet the p
 ![](./images/posts.png)
 
 ## Tech Stack used:
-1. React/React Hooks
-2. Styled-components
-3. Cypress
-4. React Testing-Library
+1. **React/React Hooks**
+2. **Styled-components**
+3. **Cypress**
+4. **React Testing-Library**
 
 ## Tools
 1. [ClickUp](https://clickup.com/)
 2. [Zeplin](https://zeplin.io/)
 3. [Perfect Pixel](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonec/dkaagdgjmgdmbnecmcefdhjekcoceebi?hl=en)
-4. GitHub version control repository
-5. Slack Team communication tool
+4. **GitHub** version control repository
+5. **Slack** Team communication tool
 
 ## I Proposed these Added Features
 For me this is the most important part of the project where I was able to apply the knoledge learnt to propose features and deliver solutions to improve on the app.
 In addition to the original AC, I proposed and implemented these features:
 
-1. highlights for cells containing posts with deleted author
-2. display the posts table in modal mode to avoid the table to show below the fold.
+1. **highlights for cells** containing posts with deleted author
+2. display the posts table in **modal mode to avoid the table to show below the fold**.
 we could implement auto-scoll but the will need to scroll up back to the heatmap again. I think offering an modal display option was practical.
 3. choose the heatmap color theme provides the user with another viewing comfort
 4. make the app responsive on all devices
@@ -46,15 +46,15 @@ we could implement auto-scoll but the will need to scroll up back to the heatmap
 ## Features Solutions screenshots
 
 1. Cell highlight to indicate it contains deleted author
-![](./images/feature#1.png)
+![Feature #1](./images/feature#1.png)
 2. choose the heatmap color scheme
-![](./images/feature#2.png)
+![Feature #2](./images/feature#2.png)
 3. display the posts table in a modal window
-![](./images/postsModal.png)
+![Feature #3](./images/postsModal.png)
 4. responsive on small screens
-![](./images/responsive.png)
+![Feature #4](./images/responsive.png)
 5. tests
-![](./images/tests.png)
+![Feature tests](./images/tests.png)
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -64,13 +64,13 @@ we could implement auto-scoll but the will need to scroll up back to the heatmap
 
 - The use of [styled-components]() makes it easy to solve css issues for the heatmap color scheme.
 - Tags are components offering flexibility and ease of styling
-- Practical components design structure and 'DRY' coding technique with global variables and styles used throughout the app
-- Efficient successive fetch calls using recursion
-- Effective use of reduce functions composition to yield complex data
+- Practical components design structure and **'DRY' coding technique** with global variables and styles used throughout the app
+- Efficient successive **fetch calls using recursion**
+- Effective use of **reduce functions composition** to yield complex data
 
-Testing using snapshot for the table that has 168 cells.
-Mocks to avoid puting strain on memory
-Avoid data mutation on a parameter passed by reference
+- **Testing using snapshot** for the table that has 168 cells.
+- **Mocks to avoid puting strain on memory**
+- **Avoid data mutation on a parameter passed by reference**
 
 
 ## Take Away from this Project:
