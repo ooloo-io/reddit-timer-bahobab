@@ -1,23 +1,27 @@
 <!-- I use this template: https://github.com/dbader/readme-template/blob/master/README.md -->
-# Reddit Timer (or How to find the best time to post your subreddit)
+# Reddit Timer
+(or How to find the best time to post your subreddit)
+
 Use historical posts data to determine the best time to post a subreddit.
 
 This project is the result of a course by [ooloo.io](https://ooloo.io/).
-The project goal is to build a professional web app with professional tools and methods.
+The project aims to build a professional web app with professional tools and methods.
 
-The lead developer [Johannes](https://jkettmann.com/author/johannes/ at ooloo.io provided the project designs in [Zeplin](https://zeplin.io/) and tasks managed in [ClickUp](https://clickup.com/) management tool.
+The lead developer [Johannes](https://jkettmann.com/author/johannes/) at ooloo.io provided the project designs in [Zeplin](https://zeplin.io/) with tasks managed in [ClickUp](https://clickup.com/) management tool.
 One of the requirements is that each taks be implemented within its own pull request(PR). And the PR is reviewed by the lead developer before it's merged.
 
 Beside the project being implemented with the React library, additional tools and packages nesesary to deliver the project to plan were free to choose.
-And on on occasion, I used TDD methodology to implement some tasks, such as header, footer, form tasks.
+During the development process, I occasionally used TDD methodology to implement some tasks, such as header, footer, form tasks.
 
-To ensure code quality and conformity an end to end (e2e) Cypress test suite was provided.
+To ensure code quality and conformity an end to end (e2e) Cypress test suite was also provided.
 I implemented the integragration tests using React Testing-Library to meet the project's acceptance criteria (AC).
 
-![](./images/homePage.png)
-![](./images/searchPage.png)
-![](./images/loading.png)
-![](./images/posts.png)
+The folowing are the screenshots of the different stages of the project:
+
+![Home page](https://res.cloudinary.com/krikitue/image/upload/v1603729023/reddit-timer/homePage_rpbxun.png)
+![Search page](https://res.cloudinary.com/krikitue/image/upload/v1603729024/reddit-timer/searchPage_lchzu0.png)
+![Loading the data](https://res.cloudinary.com/krikitue/image/upload/v1603729496/reddit-timer/loading_ncgf0d.png)
+![Display the posts](https://res.cloudinary.com/krikitue/image/upload/v1603729024/reddit-timer/posts_sgabn4.png)
 
 ## Tech Stack used:
 1. **React/React Hooks**
@@ -33,32 +37,28 @@ I implemented the integragration tests using React Testing-Library to meet the p
 5. **Slack** Team communication tool
 
 ## I Proposed these Added Features
-For me this is the most important part of the project where I was able to apply the knoledge learnt to propose features and deliver solutions to improve on the app.
-In addition to the original AC, I proposed and implemented these features:
+For me this is the most important part of the project where I was able to apply the knowledge learnt to propose features and deliver solutions to improve on the app.
+So in addition to the original AC (acceptance criteria), I proposed and implemented the folowing features:
 
 1. **highlights for cells** containing posts with deleted author
 2. display the posts table in **modal mode to avoid the table to show below the fold**.
-we could implement auto-scoll but the will need to scroll up back to the heatmap again. I think offering an modal display option was practical.
-3. choose the heatmap color theme provides the user with another viewing comfort
-4. make the app responsive on all devices
-5. provide integration and end to end tests for these features while retaining the original AC.
+we could implement auto-scoll but the user would have to scroll up back to the heatmap grid again. I think offering an modal display option was practical.
+3. **choose the heatmap color theme** to provide the user with another viewing comfort.
+4. **make the app responsive** on all devices.
+5. provide **integration and end to end tests for these features** without breaking the original AC.
 
 ## Features Solutions screenshots
 
 1. Cell highlight to indicate it contains deleted author
-![Feature #1](./images/feature#1.png)
+![Feature #1](https://res.cloudinary.com/krikitue/image/upload/v1603729023/reddit-timer/feature_1_wnshm8.png)
 2. choose the heatmap color scheme
-![Feature #2](./images/feature#2.png)
+![Feature #2](https://res.cloudinary.com/krikitue/image/upload/v1603729023/reddit-timer/feature_2_ygcnrv.png)
 3. display the posts table in a modal window
-![Feature #3](./images/postsModal.png)
+![Feature #3](https://res.cloudinary.com/krikitue/image/upload/v1603729023/reddit-timer/postsModal_wy5ai7.png)
 4. responsive on small screens
-![Feature #4](./images/responsive.png)
+![Feature #4](https://res.cloudinary.com/krikitue/image/upload/v1603729023/reddit-timer/responsive_fgefov.png)
 5. tests
-![Feature tests](./images/tests.png)
-
-[![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Downloads Stats][npm-downloads]][npm-url]
+![Feature tests](https://res.cloudinary.com/krikitue/image/upload/v1603729024/reddit-timer/tests_g26rwl.png)
 
 ## Project Highlights
 
@@ -71,7 +71,6 @@ we could implement auto-scoll but the will need to scroll up back to the heatmap
 - **Testing using snapshot** for the table that has 168 cells.
 - **Mocks to avoid puting strain on memory**
 - **Avoid data mutation on a parameter passed by reference**
-
 
 ## Take Away from this Project:
 
@@ -96,7 +95,6 @@ OS X & Linux:
 ```sh
 yarn install
 ```
-
 ## Usage
 
 After all the packages have been successfully installed, you can run:
@@ -104,7 +102,6 @@ After all the packages have been successfully installed, you can run:
 ```sh
 yarn start
 ```
-
 ## Test
 
 Run the tests with:
@@ -116,14 +113,8 @@ yarn test
 ```sh
 yarn cypress:open
 ```
-
-
 ## Meta
-
 Konan Houphoue – [@linkedIn](https://linkedIn.com/bahobab) – khoophdev@gmail.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
 [https://github.com/bahobab](https://github.com/bahobab/)
 
 <!-- ## Contributing
