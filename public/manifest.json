@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Reddit Timer",
+  "name": "Find the best times to post a reddit",
   "icons": [
     {
       "src": "favicon.ico",

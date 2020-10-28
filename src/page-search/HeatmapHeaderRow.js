@@ -22,7 +22,7 @@ function HeatmapHeaderRow() {
     <Container>
       {
       hours.map((hour) => (
-        <Hour key={hour}>{hour}</Hour>
+        <Hour key={hour} title="time of day">{hour}</Hour>
       ))
     }
     </Container>

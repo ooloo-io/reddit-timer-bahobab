@@ -40,7 +40,7 @@ function Heatmap({
 
       <TimezoneWrapper>
         All times are shown in your timezone:
-        <Timezone>{Intl.DateTimeFormat().resolvedOptions().timeZone}</Timezone>
+        <Timezone title="your timezone">{Intl.DateTimeFormat().resolvedOptions().timeZone}</Timezone>
       </TimezoneWrapper>
     </>
   );

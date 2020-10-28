@@ -29,7 +29,6 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
   const response = await fetch(url, { signal }); // should be hihjacked by mock server
 
   const { data } = await response.json();
-  // const allPosts = [...previousPosts, ...data.children];
   const allPosts = previousPosts.concat(data.children);
 
   // if we're fetching 100 posts per request
@@ -52,32 +51,11 @@ export async function fetchPaginatedPosts(subreddit, previousPosts = [], after =
  * @returns {array} nested 3D array that contains the posts grouped by week day and hour
  */
 async function groupPostsPerDayAndHour(posts) {
-  // const totalPosts = Array(7)
-  //   .fill()
-  //   .map(() => Array(24).fill().map(() => []));
   const postsPerDay = Array(7)
     .fill()
     .map(() => Array(24).fill().map(() => []));
 
   posts.forEach((post) => {
-    // const createdAt = new Date(post.data.created_utc * 1000);
-    // const dayOfWeek = createdAt.getDay();
-    // const hour = createdAt.getHours();
-    // //
-    // const {
-    //   // eslint-disable-next-line camelcase
-    //   author, title, num_comments, score, permalink,
-    // } = post.data;
-    // totalPosts[dayOfWeek][hour].push({
-    //   author,
-    //   comments: num_comments,
-    //   title,
-    //   score,
-    //   createdAt,
-    //   permalink,
-    // });
-    // postsPerDay[dayOfWeek][hour] += 1;
-
     const createdAtDate = new Date(post.data.created_utc * 1000);
     const dayOfWeek = createdAtDate.getDay();
     const hour = createdAtDate.getHours();
@@ -92,7 +70,6 @@ async function groupPostsPerDayAndHour(posts) {
     });
   });
 
-  // return postsPerDay;
   return { postsPerDay };
 }
 

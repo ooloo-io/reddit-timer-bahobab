@@ -21,7 +21,7 @@ function HeatmapRow({
 }) {
   return (
     <Container>
-      <Weekday>{weekdays[day]}</Weekday>
+      <Weekday title="weekday">{weekdays[day]}</Weekday>
       {
         postsPerHour.map((posts, hour) => {
           const deletedStyle = posts.some((post) => post.author.includes('[deleted]'))
@@ -38,6 +38,7 @@ function HeatmapRow({
               type="button"
               bgColorScheme={bgColorScheme}
               style={deletedStyle}
+              title={`${posts.length} post(s)`}
             >
               {posts.length}
             </Hour>

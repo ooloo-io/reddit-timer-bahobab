@@ -1,0 +1,2753 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`feature #1: choose heatmap color scheme heatmap shows color scheme choices 1`] = `
+<div
+  class="sc-iJCRLp bMxSdg"
+  data-testid="heatmap"
+>
+  <div
+    style="height: 52px; display: flex;"
+  >
+    <div
+      class="sc-cBoprd gGKUui"
+    >
+      <h2
+        class="sc-ciSmjq khlAEl"
+      >
+        Color Scheme
+      </h2>
+      <div
+        class="sc-jcwofb cbGtfy"
+      >
+        <label
+          class="sc-iTVIwl dhOaNB"
+          for="defaultColor"
+          title="default color scheme"
+        >
+          <input
+            class="sc-carGAA fNLeMa"
+            id="defaultColor"
+            name="colorScheme"
+            type="radio"
+            value="hourBackgroundDefault"
+          />
+          default
+        </label>
+        <label
+          class="sc-iTVIwl dhOaNB"
+          for="colorScheme1"
+          title="choco colorscheme"
+        >
+          <input
+            class="sc-carGAA fNLeMa"
+            id="colorScheme1"
+            name="colorScheme"
+            type="radio"
+            value="hourBackground1"
+          />
+          choco
+        </label>
+      </div>
+    </div>
+    <div
+      class="sc-hiKfjK eoQObI"
+    >
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        12:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        2:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        4:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        6:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        8:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        10:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        12:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        2:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        4:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        6:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        8:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        10:00pm
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Sunday
+    </div>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Monday
+    </div>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      style="border: 1px dotted red;"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Tuesday
+    </div>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv inkuNd"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hZTThO"
+      title="8 post(s)"
+      type="button"
+    >
+      8
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Wednesday
+    </div>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Thursday
+    </div>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv snbMf"
+      title="12 post(s)"
+      type="button"
+    >
+      12
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hZTThO"
+      title="8 post(s)"
+      type="button"
+    >
+      8
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Friday
+    </div>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv inkuNd"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv inkuNd"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Saturday
+    </div>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jXwNCk"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv cpMNvo"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv ketXRG"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hCIylK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv irtOrv"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv jutNUG"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv gUBHyb"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hAqEuY"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+  </div>
+</div>
+`;
+
+exports[`feature #1: choose heatmap color scheme heatmap shows color scheme choices 2`] = `
+<div
+  class="sc-iJCRLp bMxSdg"
+  data-testid="heatmap"
+>
+  <div
+    style="height: 52px; display: flex;"
+  >
+    <div
+      class="sc-cBoprd gGKUui"
+    >
+      <h2
+        class="sc-ciSmjq khlAEl"
+      >
+        Color Scheme
+      </h2>
+      <div
+        class="sc-jcwofb cbGtfy"
+      >
+        <label
+          class="sc-iTVIwl dhOaNB"
+          for="defaultColor"
+          title="default color scheme"
+        >
+          <input
+            class="sc-carGAA fNLeMa"
+            id="defaultColor"
+            name="colorScheme"
+            type="radio"
+            value="hourBackgroundDefault"
+          />
+          default
+        </label>
+        <label
+          class="sc-iTVIwl dhOaNB"
+          for="colorScheme1"
+          title="choco colorscheme"
+        >
+          <input
+            class="sc-carGAA fNLeMa"
+            id="colorScheme1"
+            name="colorScheme"
+            type="radio"
+            value="hourBackground1"
+          />
+          choco
+        </label>
+      </div>
+    </div>
+    <div
+      class="sc-hiKfjK eoQObI"
+    >
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        12:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        2:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        4:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        6:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        8:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        10:00am
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        12:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        2:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        4:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        6:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        8:00pm
+      </div>
+      <div
+        class="sc-gXfWUo dcljUP"
+        title="time of day"
+      >
+        10:00pm
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Sunday
+    </div>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Monday
+    </div>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      style="border: 1px dotted red;"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Tuesday
+    </div>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv jJdfpK"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv ewcrdz"
+      title="8 post(s)"
+      type="button"
+    >
+      8
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Wednesday
+    </div>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Thursday
+    </div>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv nQpow"
+      title="12 post(s)"
+      type="button"
+    >
+      12
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv ewcrdz"
+      title="8 post(s)"
+      type="button"
+    >
+      8
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Friday
+    </div>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jJdfpK"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv jJdfpK"
+      title="9 post(s)"
+      type="button"
+    >
+      9
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+  </div>
+  <div
+    class="sc-kLokih glHjhv"
+  >
+    <div
+      class="sc-iklIKw yjvZm"
+      title="weekday"
+    >
+      Saturday
+    </div>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv dKAOie"
+      title="0 post(s)"
+      type="button"
+    >
+      0
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv YINSQ"
+      title="2 post(s)"
+      type="button"
+    >
+      2
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv frrmYE"
+      title="7 post(s)"
+      type="button"
+    >
+      7
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+    <button
+      class="sc-jJMGHv iGImRK"
+      title="4 post(s)"
+      type="button"
+    >
+      4
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv DwEet"
+      title="6 post(s)"
+      type="button"
+    >
+      6
+    </button>
+    <button
+      class="sc-jJMGHv eGpopQ"
+      title="1 post(s)"
+      type="button"
+    >
+      1
+    </button>
+    <button
+      class="sc-jJMGHv hnLxpl"
+      title="5 post(s)"
+      type="button"
+    >
+      5
+    </button>
+    <button
+      class="sc-jJMGHv bknbQF"
+      title="3 post(s)"
+      type="button"
+    >
+      3
+    </button>
+  </div>
+</div>
+`;

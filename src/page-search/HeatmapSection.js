@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useFetchPosts from './useFetchPosts';
@@ -24,9 +24,10 @@ function HeatmapSection() {
   const selectedPosts = (postsPerDay[day] && postsPerDay[day][hour]) || [];
   canOpenCell = selectedPosts.length > 0;
 
-  useEffect(() => {
+  const updateSelectedDayAndHour = useCallback((newSelectedDayAndHour) => {
+    setSelectedDayAndHour(newSelectedDayAndHour);
     setShouldModelOpen(true);
-  }, [selectedDayAndHour]);
+  }, []);
 
   if (isLoading) {
     return (
@@ -50,7 +51,7 @@ function HeatmapSection() {
         <Heatmap
           postsPerDay={postsPerDay}
           selectedDayAndHour={selectedDayAndHour}
-          onClickHour={setSelectedDayAndHour}
+          onClickHour={updateSelectedDayAndHour}
           // showPostsTable={setPostsTableIsVisible}
         />
 
@@ -65,8 +66,15 @@ function HeatmapSection() {
         {
         canOpenCell && shouldModalOpen && modalMode && (
           <Modal id="myModal" className="modal">
-            <div className="modal-content">
-              <CloseModal className="closeModal" onClick={() => setShouldModelOpen(false)}>&times;</CloseModal>
+            <div className="modal-content" data-testid="postsModal">
+              <CloseModal
+                data-cy="closeModal"
+                as="button"
+                className="closeModal"
+                onClick={() => setShouldModelOpen(false)}
+              >
+                &times;
+              </CloseModal>
               <PostsTable posts={selectedPosts} />
             </div>
           </Modal>

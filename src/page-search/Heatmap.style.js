@@ -16,3 +16,9 @@ export const TimezoneWrapper = styled.div`
 export const Timezone = styled.span`
   font-weight: 600;
 `;
+
+export const HeaderRowWrapper = styled.div`
+  height: 52px;
+  /* height: ${(props) => props.theme.size.heatmap.headerHeight}px; */
+  display: 'flex';
+`;

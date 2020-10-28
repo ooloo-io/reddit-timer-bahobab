@@ -54,6 +54,7 @@ export const CloseModal = styled.span`
   width: 50px;
   height: 50px;
   margin-right: 20px;
+  border: none;
   border-radius: 5px;
   text-align: center;
   vertical-align: middle;

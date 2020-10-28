@@ -1,7 +1,9 @@
 import React from 'react';
 import { func } from 'prop-types';
 
-import { ColorSchemeWrapper, ColorSchemeTitle, ColorScheme } from './BgColorScheme.style';
+import {
+  ColorSchemeWrapper, ColorSchemeTitle, ColorScheme, Input, Label,
+} from './BgColorScheme.style';
 
 function BgColorScheme({ onBgColorSelect }) {
   function handleClick(bgcolor) {
@@ -14,14 +16,14 @@ function BgColorScheme({ onBgColorSelect }) {
         Color Scheme
       </ColorSchemeTitle>
       <ColorScheme>
-        <label htmlFor="defaultColor">
-          <input id="defaultColor" type="radio" name="colorScheme" value="hourBackgroundDefault" onClick={() => handleClick('hourBackgroundDefault')} />
+        <Label htmlFor="defaultColor" title="default color scheme">
+          <Input id="defaultColor" type="radio" name="colorScheme" value="hourBackgroundDefault" onClick={() => handleClick('hourBackgroundDefault')} />
           default
-        </label>
-        <label htmlFor="colorScheme1">
-          <input id="colorScheme1" type="radio" name="colorScheme" value="hourBackground1" onClick={() => handleClick('hourBackground3')} />
+        </Label>
+        <Label htmlFor="colorScheme1" title="choco colorscheme">
+          <Input id="colorScheme1" type="radio" name="colorScheme" value="hourBackground1" onClick={() => handleClick('hourBackground3')} />
           choco
-        </label>
+        </Label>
       </ColorScheme>
     </ColorSchemeWrapper>
   );
